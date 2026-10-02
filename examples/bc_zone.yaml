@@ -1,0 +1,727 @@
+# Généré par examples/gen_bc_zone.py — modifier le script plutôt que ce fichier.
+# Zone magique de protection au sol (Black Clover). 3 particules : bc_zone_start, bc_zone_loop, bc_zone_end.
+prefix: bc_zone
+title: Zone magique Black Clover
+materials: bc_zone
+file: bc_zone.pcf
+budget: 160
+bbox: 220
+draw_distance: 4000
+hide_children: true
+texture_size:
+  sparkle: 64
+systems:
+  start:
+    about: 'apparition : le cercle s''ouvre du centre au rayon 150 u (0.6 s) ; lancer loop à 0.5 s'
+    layers:
+    - id: seed
+      tex: ring
+      shape: point
+      count: 1
+      life:
+      - 0.25
+      - 0.25
+      size:
+      - 14
+      - 14
+      grow:
+      - 0.3
+      - 1.6
+      - 0.3
+      orient: ground
+      alpha: 255
+      color: &id003
+      - 222
+      - 212
+      - 255
+      offset:
+      - 0
+      - 0
+      - 1.8
+      fade_out: 0.6
+      attach: true
+    - id: inner
+      tex: mc_inner
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 200
+      color: &id001
+      - 160
+      - 115
+      - 250
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      delay: 0.0
+      life:
+      - 0.6
+      - 0.6
+      grow:
+      - 0.5
+      - 1.0
+      - 0.3
+      - 0.167
+      fade_in_s: 0.04
+      fade_out: 0.167
+    - id: outer
+      tex: mc_outer
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 235
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      delay: 0.0
+      life:
+      - 0.6
+      - 0.6
+      grow:
+      - 0.06
+      - 1.0
+      - 0.3
+      - 0.367
+      fade_in_s: 0.03
+      fade_out: 0.167
+    - id: edge
+      tex: mc_edge
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: &id002
+      - 95
+      - 75
+      - 205
+      offset:
+      - 0
+      - 0
+      - 1.5
+      anim_rate: 0.5
+      attach: true
+      count: 1
+      delay: 0.05
+      life:
+      - 0.55
+      - 0.55
+      grow:
+      - 0.06
+      - 1.0
+      - 0.3
+      - 0.309
+      fade_in_s: 0.08
+      fade_out: 0.182
+    - id: orbit
+      tex: mc_orbit
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 215
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      delay: 0.12
+      life:
+      - 0.48
+      - 0.48
+      grow:
+      - 0.85
+      - 1.0
+      - 0.3
+      - 0.25
+      fade_in_s: 0.12
+      fade_out: 0.208
+    - id: star
+      tex: mc_star
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1.5
+      pulse_alpha: &id004
+      - 0.25
+      - 0.5
+      attach: true
+      count: 1
+      delay: 0.22
+      life:
+      - 0.38
+      - 0.38
+      grow:
+      - 0.95
+      - 1.0
+      - 0.3
+      - 0.395
+      fade_in_s: 0.22
+      fade_out: 0.263
+    - id: front
+      tex: ring
+      shape: point
+      count: 1
+      life:
+      - 0.3
+      - 0.3
+      size:
+      - 174.41860465116278
+      - 174.41860465116278
+      grow:
+      - 0.06
+      - 1.04
+      - 0.3
+      - 0.733
+      orient: ground
+      alpha: 255
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1.9
+      fade_out: 0.35
+      attach: true
+    - id: rise
+      tex: sparkle
+      shape: ring
+      radius: 142.5
+      count: 26
+      delay: 0.12
+      life:
+      - 0.3
+      - 0.48
+      size:
+      - 1.4
+      - 2.6
+      up:
+      - 18
+      - 40
+      alpha:
+      - 200
+      - 255
+      color:
+      - *id003
+      - *id001
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.5
+      fade_out: 0.6
+      attach: true
+    - id: rise_mid
+      tex: sparkle
+      shape: ring
+      radius: 99.0
+      count: 14
+      delay: 0.2
+      life:
+      - 0.25
+      - 0.4
+      size:
+      - 1.2
+      - 2.2
+      up:
+      - 14
+      - 30
+      alpha:
+      - 200
+      - 255
+      color:
+      - *id003
+      - *id001
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.5
+      fade_out: 0.6
+      attach: true
+  loop:
+    about: 'zone active : anneaux qui tournent en sens opposés, géométrie qui pulse, contour qui ondule, en boucle infinie'
+    layers:
+    - id: edge
+      tex: mc_edge
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      anim_rate: 0.5
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.5
+      fade_out: 0.5
+    - id: edge_prime
+      tex: mc_edge
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      anim_rate: 0.5
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.05
+      fade_out: 0.5
+    - id: outer
+      tex: mc_outer
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 235
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      rate: 0.4
+      life:
+      - 5.0
+      - 5.0
+      fade_in: 0.5
+      fade_out: 0.5
+      turn: 4.0
+    - id: outer_prime
+      tex: mc_outer
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 235
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      life:
+      - 5.0
+      - 5.0
+      fade_in_s: 0.05
+      fade_out: 0.5
+      turn: 4.0
+    - id: orbit
+      tex: mc_orbit
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 215
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      rate: 0.3
+      life:
+      - 6.666
+      - 6.666
+      fade_in: 0.5
+      fade_out: 0.5
+      turn: -9.0
+    - id: orbit_prime
+      tex: mc_orbit
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 215
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      life:
+      - 6.666
+      - 6.666
+      fade_in_s: 0.05
+      fade_out: 0.5
+      turn: -9.0
+    - id: star
+      tex: mc_star
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1.5
+      pulse_alpha: *id004
+      attach: true
+      rate: 0.2
+      life:
+      - 10.0
+      - 10.0
+      fade_in: 0.5
+      fade_out: 0.5
+      turn: 6.0
+    - id: star_prime
+      tex: mc_star
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1.5
+      pulse_alpha: *id004
+      attach: true
+      count: 1
+      life:
+      - 10.0
+      - 10.0
+      fade_in_s: 0.05
+      fade_out: 0.5
+      turn: 6.0
+    - id: inner
+      tex: mc_inner
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 200
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      rate: 0.2667
+      life:
+      - 7.5
+      - 7.5
+      fade_in: 0.5
+      fade_out: 0.5
+      turn: -8.0
+    - id: inner_prime
+      tex: mc_inner
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 200
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      life:
+      - 7.5
+      - 7.5
+      fade_in_s: 0.05
+      fade_out: 0.5
+      turn: -8.0
+    - tex: sparkle
+      shape: ring
+      size: &id005
+      - 0.9
+      - 1.8
+      alpha: &id006
+      - 150
+      - 220
+      color: &id007
+      - *id003
+      - *id001
+      rot: true
+      fade_in: 0.3
+      fade_out: 0.4
+      attach: true
+      id: motes
+      radius: 142.5
+      offset:
+      - 0
+      - 0
+      - 3.5
+      rate: 9
+      life:
+      - 1.4
+      - 2.2
+      up:
+      - 5
+      - 12
+    - tex: sparkle
+      shape: ring
+      size: *id005
+      alpha: *id006
+      color: *id007
+      rot: true
+      fade_in: 0.1
+      fade_out: 0.4
+      attach: true
+      id: motes_prime
+      radius: 142.5
+      offset:
+      - 0
+      - 0
+      - 3.5
+      count: 14
+      life:
+      - 0.3
+      - 2.0
+      up:
+      - 5
+      - 12
+    - tex: sparkle
+      shape: ring
+      size: *id005
+      alpha: *id006
+      color: *id007
+      rot: true
+      fade_in: 0.3
+      fade_out: 0.4
+      attach: true
+      id: motes_mid
+      radius: 99.0
+      offset:
+      - 0
+      - 0
+      - 3.5
+      rate: 4
+      life:
+      - 1.2
+      - 1.8
+      up:
+      - 4
+      - 9
+    - tex: sparkle
+      shape: ring
+      size: *id005
+      alpha: *id006
+      color: *id007
+      rot: true
+      fade_in: 0.1
+      fade_out: 0.4
+      attach: true
+      id: motes_mid_prime
+      radius: 99.0
+      offset:
+      - 0
+      - 0
+      - 3.5
+      count: 6
+      life:
+      - 0.3
+      - 1.6
+      up:
+      - 4
+      - 9
+  end:
+    about: 'disparition (0.45 s) : la géométrie s''éteint, les anneaux ralentissent et se rétractent (lancer en détruisant
+      loop d''un coup)'
+    layers:
+    - id: star
+      tex: mc_star
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1.5
+      pulse_alpha: *id004
+      attach: true
+      count: 1
+      life:
+      - 0.2
+      - 0.2
+      grow:
+      - 1.0
+      - 0.97
+      - 0.5
+      fade_out: 0.8
+      turn: 2.4
+    - id: inner
+      tex: mc_inner
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 200
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      life:
+      - 0.25
+      - 0.25
+      grow:
+      - 1.0
+      - 0.9
+      - 0.5
+      fade_out: 0.8
+      turn: -3.2
+    - id: orbit
+      tex: mc_orbit
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 215
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      life:
+      - 0.32
+      - 0.32
+      grow:
+      - 1.0
+      - 0.93
+      - 0.5
+      fade_out: 0.8
+      turn: -3.6
+    - id: edge
+      tex: mc_edge
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 150
+      color: *id002
+      offset:
+      - 0
+      - 0
+      - 1.5
+      anim_rate: 0.5
+      attach: true
+      count: 1
+      life:
+      - 0.4
+      - 0.4
+      grow:
+      - 1.0
+      - 0.9
+      - 0.5
+      fade_out: 0.8
+    - id: outer
+      tex: mc_outer
+      shape: point
+      size:
+      - 157.07
+      - 157.07
+      orient: ground
+      alpha: 235
+      color: *id001
+      offset:
+      - 0
+      - 0
+      - 1.5
+      attach: true
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      grow:
+      - 1.0
+      - 0.9
+      - 0.5
+      fade_out: 0.8
+      turn: 1.6
+    - id: sparks
+      tex: sparkle
+      shape: ring
+      radius: 139.5
+      count: 30
+      delay: 0.05
+      life:
+      - 0.25
+      - 0.4
+      size:
+      - 1.2
+      - 2.4
+      speed:
+      - -25
+      - -8
+      up:
+      - 15
+      - 35
+      alpha:
+      - 200
+      - 255
+      color:
+      - *id003
+      - *id001
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.5
+      fade_out: 0.6
+      attach: true
