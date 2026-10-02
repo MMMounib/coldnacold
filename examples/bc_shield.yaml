@@ -1,0 +1,2973 @@
+# Généré par examples/gen_bc_shield.py — modifier le script plutôt que ce fichier.
+# Bouclier Black Clover, bulle ovale anime. 3 particules : bc_shield_start, bc_shield_loop, bc_shield_end.
+prefix: bc_shield
+title: Bouclier Black Clover
+materials: bc_shield
+file: bc_shield.pcf
+budget: 820
+bbox: 160
+draw_distance: 3000
+hide_children: true
+texture_size:
+  sparkle: 64
+systems:
+  start:
+    about: 'apparition : un cercle s''ouvre au sol et le bouclier en sort (1.35 s) ; lancer loop à 1.1 s'
+    layers:
+    - id: skin0
+      tex: shield_film
+      shape: ring
+      radius: 22.07
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: &id001
+      - 40
+      - 55
+      color: &id002
+      - - 115
+        - 120
+        - 255
+      - - 160
+        - 170
+        - 255
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 14
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 21.59
+      - 21.59
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin1
+      tex: shield_film
+      shape: ring
+      radius: 28.64
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 18
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 48.7
+      - 48.7
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin2
+      tex: shield_film
+      shape: ring
+      radius: 33.67
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 21
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 80.27
+      - 80.27
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin3
+      tex: shield_film
+      shape: ring
+      radius: 37.21
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 23
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 114.78
+      - 114.78
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin4
+      tex: shield_film
+      shape: ring
+      radius: 39.31
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 25
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 151.18
+      - 151.18
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin5
+      tex: shield_film
+      shape: ring
+      radius: 40.0
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 7.2
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 25
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 188.22
+      - 188.22
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin6
+      tex: shield_film
+      shape: ring
+      radius: 39.3
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 25
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 224.96
+      - 224.96
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin7
+      tex: shield_film
+      shape: ring
+      radius: 37.19
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 23
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 261.32
+      - 261.32
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin8
+      tex: shield_film
+      shape: ring
+      radius: 33.64
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 21
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 295.83
+      - 295.83
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin9
+      tex: shield_film
+      shape: ring
+      radius: 28.59
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 18
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 327.36
+      - 327.36
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin10
+      tex: shield_film
+      shape: ring
+      radius: 22.01
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 14
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 354.43
+      - 354.43
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin11
+      tex: shield_film
+      shape: ring
+      radius: 13.96
+      ring_even: true
+      ring_count: 9
+      ring_yaw: 20.0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 9
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 374.79
+      - 374.79
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: skin12
+      tex: shield_film
+      shape: ring
+      radius: 1.0
+      ring_even: true
+      ring_count: 2
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 1.0
+      count: 2
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 375.83
+      - 375.83
+      fade_in_s: 0.15
+      fade_out: 0.22
+      attach: true
+    - id: circle
+      tex: ring
+      count: 1
+      life:
+      - 1.35
+      - 1.35
+      size:
+      - 46.51
+      - 46.51
+      grow:
+      - 0.08
+      - 1.0
+      - 0.35
+      - 0.259
+      orient: ground
+      alpha: 255
+      color: &id003
+      - 220
+      - 225
+      - 255
+      offset:
+      - 0
+      - 0
+      - 1
+      fade_out: 0.222
+      attach: true
+    - id: circle_glow
+      tex: ring
+      count: 1
+      life:
+      - 1.35
+      - 1.35
+      size:
+      - 49.3
+      - 49.3
+      grow:
+      - 0.08
+      - 1.0
+      - 0.35
+      - 0.259
+      orient: ground
+      alpha: 150
+      color: &id004
+      - 155
+      - 165
+      - 255
+      offset:
+      - 0
+      - 0
+      - 1.5
+      pulse_alpha:
+      - 0.3
+      - 4
+      fade_out: 0.222
+      attach: true
+    - id: seed
+      tex: sparkle
+      shape: point
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      size:
+      - 6
+      - 6
+      grow:
+      - 0.3
+      - 1.4
+      - 0.4
+      alpha: 255
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 2
+      fade_out: 0.6
+      attach: true
+    - id: spray
+      tex: sparkle
+      shape: ring
+      radius: 1.0
+      count: 30
+      speed:
+      - 88
+      - 120
+      up:
+      - 10
+      - 35
+      drag: 0.1
+      life:
+      - 0.4
+      - 0.7
+      size:
+      - 1.2
+      - 2.6
+      alpha:
+      - 220
+      - 255
+      color:
+      - *id003
+      - - 160
+        - 170
+        - 255
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 2
+      fade_out: 0.5
+      attach: true
+    - id: rim
+      tex: shield_rim
+      shape: point
+      size:
+      - 56.0
+      - 56.0
+      alpha: 255
+      color: *id004
+      offset:
+      - 0
+      - 0
+      - 1
+      anim_rate: 0.7
+      hide_in_first_person: true
+      count: 1
+      delay: 0.3
+      life:
+      - 1.0
+      - 1.0
+      drag: 0.12
+      up:
+      - 187.92
+      - 187.92
+      grow:
+      - 0.45
+      - 1.0
+      - 0.35
+      - 0.75
+      fade_in_s: 0.25
+      fade_out: 0.22
+      attach: true
+    - tex: energy_cloud
+      shape: disc
+      spread: &id057
+      - 10
+      - 27
+      height: &id058
+      - 4
+      - 30
+      size: &id059
+      - 15
+      - 22
+      up: &id060
+      - 2
+      - 5
+      alpha: &id061
+      - 130
+      - 180
+      color: &id062
+      - - 130
+        - 135
+        - 255
+      - - 175
+        - 185
+        - 255
+      rot: true
+      spin: &id063
+      - -20
+      - 20
+      anim_rate: 0.4
+      motion: &id064
+      - type: orbit
+        speed: 0.2
+        direction: 1
+      attach: true
+      id: clouds
+      count: 10
+      delay: 0.55
+      life:
+      - 0.8
+      - 0.8
+      fade_in: 0.4
+      fade_out: 0.275
+    - id: wave
+      tex: ring
+      size:
+      - 38.0
+      - 38.0
+      orient: ground
+      alpha: 150
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1
+      fade_in: 0.12
+      fade_out: 0.25
+      extra: &id069
+      - - O_rscale
+        - 0.05
+        - 1.0
+        - 0.0
+        - 0.5
+        - 0.5
+      - - O_rscale
+        - 1.0
+        - 0.05
+        - 0.5
+        - 1.0
+        - 0.5
+      count: 1
+      delay: 0.35
+      life:
+      - 0.75
+      - 0.75
+      up:
+      - 138.67
+      - 138.67
+      attach: true
+    - id: pop
+      tex: sparkle
+      shape: sphere
+      spread:
+      - 34.0
+      - 38.0
+      count: 26
+      delay: 1.0
+      speed:
+      - 15
+      - 35
+      drag: 0.1
+      life:
+      - 0.4
+      - 0.7
+      size:
+      - 1.4
+      - 2.8
+      alpha:
+      - 220
+      - 255
+      color:
+      - *id003
+      - - 160
+        - 170
+        - 255
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 50.0
+      fade_out: 0.6
+      attach: true
+    - id: star
+      tex: sparkle
+      shape: point
+      count: 1
+      delay: 1.05
+      life:
+      - 0.5
+      - 0.5
+      size:
+      - 8
+      - 8
+      grow:
+      - 0.3
+      - 1.2
+      - 0.3
+      alpha: 255
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 100.0
+      fade_out: 0.6
+      attach: true
+  loop:
+    about: bulle ovale formée, fluide et animée, en boucle infinie (s'éteint seule en ~1,5 s quand on l'arrête ; pour une
+      fin nette, le détruire d'un coup en lançant end)
+    layers:
+    - id: skin0
+      tex: shield_film
+      shape: ring
+      radius: 22.07
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size: &id005
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id006
+      - 0
+      - 0
+      - 6.63
+      spin: &id007
+      - -6
+      - 6
+      motion: &id008
+      - type: orbit
+        speed: 0.11
+        direction: 1
+      attach: true
+      rate: 10.0
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin0_prime
+      tex: shield_film
+      shape: ring
+      radius: 22.07
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size: *id005
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id006
+      spin: *id007
+      motion: *id008
+      attach: true
+      count: 14
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 14
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin1
+      tex: shield_film
+      shape: ring
+      radius: 28.64
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size: &id009
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id010
+      - 0
+      - 0
+      - 13.7
+      spin: &id011
+      - -6
+      - 6
+      motion: &id012
+      - type: orbit
+        speed: 0.148
+        direction: 1
+      attach: true
+      rate: 12.857
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin1_prime
+      tex: shield_film
+      shape: ring
+      radius: 28.64
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size: *id009
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id010
+      spin: *id011
+      motion: *id012
+      attach: true
+      count: 18
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 18
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin2
+      tex: shield_film
+      shape: ring
+      radius: 33.67
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size: &id013
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id014
+      - 0
+      - 0
+      - 21.93
+      spin: &id015
+      - -6
+      - 6
+      motion: &id016
+      - type: orbit
+        speed: 0.1
+        direction: 1
+      attach: true
+      rate: 15.0
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin2_prime
+      tex: shield_film
+      shape: ring
+      radius: 33.67
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size: *id013
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id014
+      spin: *id015
+      motion: *id016
+      attach: true
+      count: 21
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 21
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin3
+      tex: shield_film
+      shape: ring
+      radius: 37.21
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size: &id017
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id018
+      - 0
+      - 0
+      - 30.93
+      spin: &id019
+      - -6
+      - 6
+      motion: &id020
+      - type: orbit
+        speed: 0.074
+        direction: 1
+      attach: true
+      rate: 16.429
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin3_prime
+      tex: shield_film
+      shape: ring
+      radius: 37.21
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size: *id017
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id018
+      spin: *id019
+      motion: *id020
+      attach: true
+      count: 23
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 23
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin4
+      tex: shield_film
+      shape: ring
+      radius: 39.31
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size: &id021
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id022
+      - 0
+      - 0
+      - 40.42
+      spin: &id023
+      - -6
+      - 6
+      motion: &id024
+      - type: orbit
+        speed: 0.129
+        direction: 1
+      attach: true
+      rate: 17.857
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin4_prime
+      tex: shield_film
+      shape: ring
+      radius: 39.31
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size: *id021
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id022
+      spin: *id023
+      motion: *id024
+      attach: true
+      count: 25
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 25
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin5
+      tex: shield_film
+      shape: ring
+      radius: 40.0
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 7.2
+      size: &id025
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id026
+      - 0
+      - 0
+      - 50.08
+      spin: &id027
+      - -6
+      - 6
+      motion: &id028
+      - type: orbit
+        speed: 0.141
+        direction: 1
+      attach: true
+      rate: 17.857
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin5_prime
+      tex: shield_film
+      shape: ring
+      radius: 40.0
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 7.2
+      size: *id025
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id026
+      spin: *id027
+      motion: *id028
+      attach: true
+      count: 25
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 25
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin6
+      tex: shield_film
+      shape: ring
+      radius: 39.3
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size: &id029
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id030
+      - 0
+      - 0
+      - 59.66
+      spin: &id031
+      - -6
+      - 6
+      motion: &id032
+      - type: orbit
+        speed: 0.083
+        direction: 1
+      attach: true
+      rate: 17.857
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin6_prime
+      tex: shield_film
+      shape: ring
+      radius: 39.3
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size: *id029
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id030
+      spin: *id031
+      motion: *id032
+      attach: true
+      count: 25
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 25
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin7
+      tex: shield_film
+      shape: ring
+      radius: 37.19
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size: &id033
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id034
+      - 0
+      - 0
+      - 69.14
+      spin: &id035
+      - -6
+      - 6
+      motion: &id036
+      - type: orbit
+        speed: 0.086
+        direction: 1
+      attach: true
+      rate: 16.429
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin7_prime
+      tex: shield_film
+      shape: ring
+      radius: 37.19
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size: *id033
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id034
+      spin: *id035
+      motion: *id036
+      attach: true
+      count: 23
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 23
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin8
+      tex: shield_film
+      shape: ring
+      radius: 33.64
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size: &id037
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id038
+      - 0
+      - 0
+      - 78.14
+      spin: &id039
+      - -6
+      - 6
+      motion: &id040
+      - type: orbit
+        speed: 0.143
+        direction: 1
+      attach: true
+      rate: 15.0
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin8_prime
+      tex: shield_film
+      shape: ring
+      radius: 33.64
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size: *id037
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id038
+      spin: *id039
+      motion: *id040
+      attach: true
+      count: 21
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 21
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin9
+      tex: shield_film
+      shape: ring
+      radius: 28.59
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size: &id041
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id042
+      - 0
+      - 0
+      - 86.36
+      spin: &id043
+      - -6
+      - 6
+      motion: &id044
+      - type: orbit
+        speed: 0.125
+        direction: 1
+      attach: true
+      rate: 12.857
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin9_prime
+      tex: shield_film
+      shape: ring
+      radius: 28.59
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size: *id041
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id042
+      spin: *id043
+      motion: *id044
+      attach: true
+      count: 18
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 18
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin10
+      tex: shield_film
+      shape: ring
+      radius: 22.01
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size: &id045
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id046
+      - 0
+      - 0
+      - 93.42
+      spin: &id047
+      - -6
+      - 6
+      motion: &id048
+      - type: orbit
+        speed: 0.073
+        direction: 1
+      attach: true
+      rate: 10.0
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin10_prime
+      tex: shield_film
+      shape: ring
+      radius: 22.01
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size: *id045
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id046
+      spin: *id047
+      motion: *id048
+      attach: true
+      count: 14
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 14
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin11
+      tex: shield_film
+      shape: ring
+      radius: 13.96
+      ring_even: true
+      ring_count: 9
+      ring_yaw: 20.0
+      size: &id049
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id050
+      - 0
+      - 0
+      - 98.73
+      spin: &id051
+      - -6
+      - 6
+      motion: &id052
+      - type: orbit
+        speed: 0.104
+        direction: 1
+      attach: true
+      rate: 6.429
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin11_prime
+      tex: shield_film
+      shape: ring
+      radius: 13.96
+      ring_even: true
+      ring_count: 9
+      ring_yaw: 20.0
+      size: *id049
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id050
+      spin: *id051
+      motion: *id052
+      attach: true
+      count: 9
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 9
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: skin12
+      tex: shield_film
+      shape: ring
+      radius: 1.0
+      ring_even: true
+      ring_count: 2
+      ring_yaw: 0
+      size: &id053
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: &id054
+      - 0
+      - 0
+      - 99.0
+      spin: &id055
+      - -6
+      - 6
+      motion: &id056
+      - type: orbit
+        speed: 0.148
+        direction: 1
+      attach: true
+      rate: 1.429
+      life:
+      - 1.4
+      - 1.4
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: skin12_prime
+      tex: shield_film
+      shape: ring
+      radius: 1.0
+      ring_even: true
+      ring_count: 2
+      ring_yaw: 0
+      size: *id053
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset: *id054
+      spin: *id055
+      motion: *id056
+      attach: true
+      count: 2
+      life:
+      - 1.4
+      - 1.4
+      extra:
+      - - I_remap_count
+        - 0
+        - 2
+        - 0.02
+        - 1.4
+        - 1
+      fade_out: 0.25
+    - id: rim
+      tex: shield_rim
+      shape: point
+      size:
+      - 56.0
+      - 56.0
+      alpha: 255
+      color: *id004
+      offset:
+      - 0
+      - 0
+      - 50.0
+      anim_rate: 0.7
+      hide_in_first_person: true
+      rate: 1.111
+      life:
+      - 1.8
+      - 1.8
+      fade_in: 0.5
+      fade_out: 0.5
+      attach: true
+    - id: rim_prime
+      tex: shield_rim
+      shape: point
+      size:
+      - 56.0
+      - 56.0
+      alpha: 255
+      color: *id004
+      offset:
+      - 0
+      - 0
+      - 50.0
+      anim_rate: 0.7
+      hide_in_first_person: true
+      count: 1
+      life:
+      - 1.8
+      - 1.8
+      fade_out: 0.5
+      attach: true
+    - tex: energy_cloud
+      shape: disc
+      spread: *id057
+      height: *id058
+      size: *id059
+      up: *id060
+      alpha: *id061
+      color: *id062
+      rot: true
+      spin: *id063
+      anim_rate: 0.4
+      motion: *id064
+      attach: true
+      id: clouds
+      rate: 10
+      life:
+      - 1.2
+      - 1.6
+      fade_in: 0.3
+      fade_out: 0.35
+    - tex: energy_cloud
+      shape: disc
+      spread: *id057
+      height: *id058
+      size: *id059
+      up: *id060
+      alpha: *id061
+      color: *id062
+      rot: true
+      spin: *id063
+      anim_rate: 0.4
+      motion: *id064
+      attach: true
+      id: clouds_prime
+      count: 14
+      life:
+      - 0.4
+      - 1.5
+      fade_out: 0.35
+    - tex: shield_veins
+      shape: ring
+      size: &id065
+      - 15
+      - 20
+      alpha: &id066
+      - 120
+      - 170
+      color: &id067
+      - - 150
+        - 160
+        - 255
+      - *id003
+      rot: true
+      anim_rate: 0.35
+      motion: &id068
+      - type: orbit
+        speed: 0.16
+        direction: -1
+      attach: true
+      id: veins0
+      radius: 22.07
+      offset:
+      - 0
+      - 0
+      - 6.63
+      rate: 4.242
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins0_prime
+      radius: 22.07
+      offset:
+      - 0
+      - 0
+      - 6.63
+      count: 5
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins1
+      radius: 28.64
+      offset:
+      - 0
+      - 0
+      - 13.7
+      rate: 5.455
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins1_prime
+      radius: 28.64
+      offset:
+      - 0
+      - 0
+      - 13.7
+      count: 6
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins2
+      radius: 33.67
+      offset:
+      - 0
+      - 0
+      - 21.93
+      rate: 6.364
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins2_prime
+      radius: 33.67
+      offset:
+      - 0
+      - 0
+      - 21.93
+      count: 7
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins3
+      radius: 37.21
+      offset:
+      - 0
+      - 0
+      - 30.93
+      rate: 6.97
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins3_prime
+      radius: 37.21
+      offset:
+      - 0
+      - 0
+      - 30.93
+      count: 8
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins4
+      radius: 39.31
+      offset:
+      - 0
+      - 0
+      - 40.42
+      rate: 7.576
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins4_prime
+      radius: 39.31
+      offset:
+      - 0
+      - 0
+      - 40.42
+      count: 8
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins5
+      radius: 40.0
+      offset:
+      - 0
+      - 0
+      - 50.08
+      rate: 7.576
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins5_prime
+      radius: 40.0
+      offset:
+      - 0
+      - 0
+      - 50.08
+      count: 8
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins6
+      radius: 39.3
+      offset:
+      - 0
+      - 0
+      - 59.66
+      rate: 7.576
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins6_prime
+      radius: 39.3
+      offset:
+      - 0
+      - 0
+      - 59.66
+      count: 8
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins7
+      radius: 37.19
+      offset:
+      - 0
+      - 0
+      - 69.14
+      rate: 6.97
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins7_prime
+      radius: 37.19
+      offset:
+      - 0
+      - 0
+      - 69.14
+      count: 8
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins8
+      radius: 33.64
+      offset:
+      - 0
+      - 0
+      - 78.14
+      rate: 6.364
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins8_prime
+      radius: 33.64
+      offset:
+      - 0
+      - 0
+      - 78.14
+      count: 7
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins9
+      radius: 28.59
+      offset:
+      - 0
+      - 0
+      - 86.36
+      rate: 5.455
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins9_prime
+      radius: 28.59
+      offset:
+      - 0
+      - 0
+      - 86.36
+      count: 6
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins10
+      radius: 22.01
+      offset:
+      - 0
+      - 0
+      - 93.42
+      rate: 4.242
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins10_prime
+      radius: 22.01
+      offset:
+      - 0
+      - 0
+      - 93.42
+      count: 5
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins11
+      radius: 13.96
+      offset:
+      - 0
+      - 0
+      - 98.73
+      rate: 2.727
+      life:
+      - 0.9
+      - 1.3
+      fade_in: 0.3
+      fade_out: 0.3
+    - tex: shield_veins
+      shape: ring
+      size: *id065
+      alpha: *id066
+      color: *id067
+      rot: true
+      anim_rate: 0.35
+      motion: *id068
+      attach: true
+      id: veins11_prime
+      radius: 13.96
+      offset:
+      - 0
+      - 0
+      - 98.73
+      count: 3
+      life:
+      - 0.3
+      - 1.2
+      fade_out: 0.3
+    - id: wave
+      tex: ring
+      size:
+      - 38.0
+      - 38.0
+      orient: ground
+      alpha: 150
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1
+      fade_in: 0.12
+      fade_out: 0.25
+      extra: *id069
+      rate: 0.455
+      life:
+      - 1.3
+      - 1.3
+      up:
+      - 80.0
+      - 80.0
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size: &id070
+      - 1.6
+      - 3.0
+      alpha: &id071
+      - 200
+      - 255
+      color: &id072
+      - *id003
+      - - 160
+        - 170
+        - 255
+      rot: true
+      grow: &id073
+      - 0
+      - 1
+      - 0.5
+      fade_out: 0.5
+      attach: true
+      id: twinkle_low
+      radius: 35.07
+      offset:
+      - 0
+      - 0
+      - 25
+      rate: 5
+      life:
+      - 0.6
+      - 1.0
+    - tex: sparkle
+      shape: ring
+      size: *id070
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: twinkle_mid
+      radius: 40.0
+      offset:
+      - 0
+      - 0
+      - 50.0
+      rate: 7
+      life:
+      - 0.6
+      - 1.0
+    - tex: sparkle
+      shape: ring
+      size: *id070
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: twinkle_high
+      radius: 32.67
+      offset:
+      - 0
+      - 0
+      - 80
+      rate: 5
+      life:
+      - 0.6
+      - 1.0
+    - tex: sparkle
+      shape: disc
+      size:
+      - 0.8
+      - 1.6
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes
+      spread:
+      - 0
+      - 30
+      height:
+      - 2
+      - 60
+      rate: 12
+      life:
+      - 1.0
+      - 1.6
+      up:
+      - 14
+      - 26
+      fade_in: 0.2
+    - tex: sparkle
+      shape: disc
+      size:
+      - 0.8
+      - 1.6
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes_prime
+      spread:
+      - 0
+      - 30
+      height:
+      - 2
+      - 80
+      count: 16
+      life:
+      - 0.3
+      - 1.5
+      up:
+      - 14
+      - 26
+    - id: halo
+      tex: ring
+      rate: 1.0
+      life:
+      - 1.6
+      - 1.6
+      size:
+      - 22
+      - 22
+      grow:
+      - 0.8
+      - 1.15
+      - 0.5
+      orient: ground
+      alpha: 110
+      color: *id004
+      offset:
+      - 0
+      - 0
+      - 1
+      fade_in: 0.3
+      fade_out: 0.4
+      attach: true
+    - id: halo_prime
+      tex: ring
+      count: 2
+      life:
+      - 0.8
+      - 1.6
+      size:
+      - 22
+      - 22
+      orient: ground
+      alpha: 110
+      color: *id004
+      offset:
+      - 0
+      - 0
+      - 1
+      fade_out: 0.4
+      attach: true
+  end:
+    about: 'disparition : la bulle éclate en flash puis se dissout en paillettes (lancer en détruisant loop d''un coup)'
+    layers:
+    - id: skin0
+      tex: shield_film
+      shape: ring
+      radius: 22.07
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 6.63
+      count: 14
+      life:
+      - 0.5870000000000001
+      - 0.5870000000000001
+      shrink_end: 0.6
+      fade_out: 0.511
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes0
+      radius: 22.07
+      offset:
+      - 0
+      - 0
+      - 6.63
+      count: 7
+      delay: 0.537
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin1
+      tex: shield_film
+      shape: ring
+      radius: 28.64
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 13.7
+      count: 18
+      life:
+      - 0.556
+      - 0.556
+      shrink_end: 0.6
+      fade_out: 0.54
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes1
+      radius: 28.64
+      offset:
+      - 0
+      - 0
+      - 13.7
+      count: 9
+      delay: 0.506
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin2
+      tex: shield_film
+      shape: ring
+      radius: 33.67
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 21.93
+      count: 21
+      life:
+      - 0.52
+      - 0.52
+      shrink_end: 0.6
+      fade_out: 0.577
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes2
+      radius: 33.67
+      offset:
+      - 0
+      - 0
+      - 21.93
+      count: 10
+      delay: 0.47
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin3
+      tex: shield_film
+      shape: ring
+      radius: 37.21
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 30.93
+      count: 23
+      life:
+      - 0.481
+      - 0.481
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes3
+      radius: 37.21
+      offset:
+      - 0
+      - 0
+      - 30.93
+      count: 11
+      delay: 0.431
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin4
+      tex: shield_film
+      shape: ring
+      radius: 39.31
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 40.42
+      count: 25
+      life:
+      - 0.439
+      - 0.439
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes4
+      radius: 39.31
+      offset:
+      - 0
+      - 0
+      - 40.42
+      count: 12
+      delay: 0.389
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin5
+      tex: shield_film
+      shape: ring
+      radius: 40.0
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 7.2
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 50.08
+      count: 25
+      life:
+      - 0.39699999999999996
+      - 0.39699999999999996
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes5
+      radius: 40.0
+      offset:
+      - 0
+      - 0
+      - 50.08
+      count: 12
+      delay: 0.347
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin6
+      tex: shield_film
+      shape: ring
+      radius: 39.3
+      ring_even: true
+      ring_count: 25
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 59.66
+      count: 25
+      life:
+      - 0.355
+      - 0.355
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes6
+      radius: 39.3
+      offset:
+      - 0
+      - 0
+      - 59.66
+      count: 12
+      delay: 0.305
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin7
+      tex: shield_film
+      shape: ring
+      radius: 37.19
+      ring_even: true
+      ring_count: 23
+      ring_yaw: 7.83
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 69.14
+      count: 23
+      life:
+      - 0.314
+      - 0.314
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes7
+      radius: 37.19
+      offset:
+      - 0
+      - 0
+      - 69.14
+      count: 11
+      delay: 0.264
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin8
+      tex: shield_film
+      shape: ring
+      radius: 33.64
+      ring_even: true
+      ring_count: 21
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 78.14
+      count: 21
+      life:
+      - 0.274
+      - 0.274
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes8
+      radius: 33.64
+      offset:
+      - 0
+      - 0
+      - 78.14
+      count: 10
+      delay: 0.224
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin9
+      tex: shield_film
+      shape: ring
+      radius: 28.59
+      ring_even: true
+      ring_count: 18
+      ring_yaw: 10.0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 86.36
+      count: 18
+      life:
+      - 0.238
+      - 0.238
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes9
+      radius: 28.59
+      offset:
+      - 0
+      - 0
+      - 86.36
+      count: 9
+      delay: 0.188
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin10
+      tex: shield_film
+      shape: ring
+      radius: 22.01
+      ring_even: true
+      ring_count: 14
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 93.42
+      count: 14
+      life:
+      - 0.20800000000000002
+      - 0.20800000000000002
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes10
+      radius: 22.01
+      offset:
+      - 0
+      - 0
+      - 93.42
+      count: 7
+      delay: 0.158
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin11
+      tex: shield_film
+      shape: ring
+      radius: 13.96
+      ring_even: true
+      ring_count: 9
+      ring_yaw: 20.0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 98.73
+      count: 9
+      life:
+      - 0.184
+      - 0.184
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes11
+      radius: 13.96
+      offset:
+      - 0
+      - 0
+      - 98.73
+      count: 4
+      delay: 0.134
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: skin12
+      tex: shield_film
+      shape: ring
+      radius: 1.0
+      ring_even: true
+      ring_count: 2
+      ring_yaw: 0
+      size:
+      - 9.9
+      - 12.100000000000001
+      alpha: *id001
+      color: *id002
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 99.0
+      count: 2
+      life:
+      - 0.183
+      - 0.183
+      shrink_end: 0.6
+      fade_out: 0.6
+      attach: true
+    - tex: sparkle
+      shape: ring
+      size:
+      - 1.0
+      - 2.0
+      alpha: *id071
+      color: *id072
+      rot: true
+      grow: *id073
+      fade_out: 0.5
+      attach: true
+      id: motes12
+      radius: 1.0
+      offset:
+      - 0
+      - 0
+      - 99.0
+      count: 3
+      delay: 0.133
+      life:
+      - 0.6
+      - 1.0
+      up:
+      - 10
+      - 28
+      drag: 0.05
+    - id: rim
+      tex: shield_rim
+      shape: point
+      size:
+      - 56.0
+      - 56.0
+      alpha: 255
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 50.0
+      anim_rate: 0.7
+      hide_in_first_person: true
+      count: 1
+      life:
+      - 0.4
+      - 0.4
+      grow:
+      - 1.0
+      - 1.2
+      - 0.5
+      fade_out: 0.8
+      attach: true
+    - id: shock
+      tex: ring
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      size:
+      - 52.0
+      - 52.0
+      grow:
+      - 0.8
+      - 1.5
+      - 0.3
+      orient: ground
+      alpha: 255
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 50.0
+      fade_out: 0.8
+      attach: true
+    - id: burst
+      tex: sparkle
+      shape: sphere
+      spread:
+      - 32.0
+      - 36.0
+      count: 48
+      speed:
+      - 35
+      - 80
+      drag: 0.08
+      life:
+      - 0.5
+      - 0.9
+      size:
+      - 1.2
+      - 2.4
+      alpha:
+      - 210
+      - 255
+      color:
+      - *id003
+      - - 160
+        - 170
+        - 255
+      rot: true
+      offset:
+      - 0
+      - 0
+      - 50.0
+      fade_out: 0.6
+      attach: true
+    - tex: energy_cloud
+      shape: disc
+      spread: *id057
+      height: *id058
+      size: *id059
+      up: *id060
+      alpha: *id061
+      color: *id062
+      rot: true
+      spin: *id063
+      anim_rate: 0.4
+      motion: *id064
+      attach: true
+      id: clouds
+      count: 10
+      life:
+      - 0.4
+      - 0.6
+      fade_out: 0.8
+    - id: ripple
+      tex: ring
+      count: 1
+      delay: 0.553
+      life:
+      - 0.6
+      - 0.6
+      size:
+      - 36.0
+      - 36.0
+      grow:
+      - 0.3
+      - 1.2
+      - 0.3
+      orient: ground
+      alpha: 130
+      color: *id003
+      offset:
+      - 0
+      - 0
+      - 1
+      fade_out: 0.7
+      attach: true

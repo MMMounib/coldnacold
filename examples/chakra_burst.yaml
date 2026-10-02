@@ -1,0 +1,10 @@
+# Libération brève : charge courte puis éclat radial.
+id: chakra_burst
+title: Explosion de chakra
+style: {type: chakra, color: [90, 190, 255], intensity: 0.85, look: [anime]}
+shape: {type: burst, radius: 90}
+timeline:
+  - {phase: charge, duration: 0.35}
+  - {phase: release, duration: 0.25}
+  - {phase: aftermath, duration: 0.8}
+performance: {max_particles: 350}

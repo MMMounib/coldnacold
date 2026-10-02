@@ -1,0 +1,4220 @@
+# Généré par examples/gen_sarada_ohirume.py — modifier le script plutôt que ce fichier.
+# Pack Sarada — Mangekyō Sharingan / Ōhirume : un seul PCF, systèmes sarada_* et ohirume_*.
+prefix: sarada_ohirume
+prefixes:
+- sarada
+- ohirume
+exact_names: true
+title: Sarada — Mangekyō Sharingan / Ōhirume
+materials: sarada_ohirume
+file: sarada_ohirume.pcf
+budget: 200
+bbox: 220
+draw_distance: 4000
+hide_children: true
+texture_size:
+  sarada_spark: 64
+  ohirume_gravity: 64
+systems:
+  sarada_aura:
+    about: aura sombre et carmin très légère, en boucle (CP0 = pieds)
+    layers:
+    - id: core
+      tex: sarada_core
+      shape: point
+      offset: &id001
+      - 0
+      - 0
+      - 40.0
+      size: &id002
+      - 24
+      - 24
+      alpha: 120
+      color: &id003
+      - 255
+      - 255
+      - 255
+      pulse_alpha: &id004
+      - 0.12
+      - 0.4
+      attach: true
+      rate: 0.417
+      life:
+      - 4.8
+      - 4.8
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: core_prime
+      tex: sarada_core
+      shape: point
+      offset: *id001
+      size: *id002
+      alpha: 120
+      color: *id003
+      pulse_alpha: *id004
+      attach: true
+      count: 1
+      life:
+      - 4.8
+      - 4.8
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: halo
+      tex: sarada_glow
+      shape: point
+      offset: &id005
+      - 0
+      - 0
+      - 42.0
+      size: &id006
+      - 34
+      - 34
+      alpha: 38
+      color: *id003
+      pulse_alpha: &id007
+      - 0.25
+      - 0.4
+      attach: true
+      rate: 0.417
+      life:
+      - 4.8
+      - 4.8
+      fade_in: 0.5
+      fade_out: 0.5
+    - id: halo_prime
+      tex: sarada_glow
+      shape: point
+      offset: *id005
+      size: *id006
+      alpha: 38
+      color: *id003
+      pulse_alpha: *id007
+      attach: true
+      count: 1
+      life:
+      - 4.8
+      - 4.8
+      fade_in_s: 0.06
+      fade_out: 0.5
+    - id: filaments
+      tex: sarada_filament
+      shape: ring
+      radius: 17
+      thickness: 5
+      height: &id008
+      - 17
+      - 42
+      orient: vertical
+      rate: 7
+      life:
+      - 1.4
+      - 2.0
+      size: &id009
+      - 12
+      - 17
+      up: &id010
+      - 10
+      - 18
+      alpha: &id011
+      - 210
+      - 255
+      color: *id003
+      anim_rate: 0.8
+      motion: &id012
+      - type: orbit
+        speed: 0.12
+        direction: 1
+      fade_in: 0.3
+      fade_out: 0.4
+      attach: true
+    - id: filaments_prime
+      tex: sarada_filament
+      shape: ring
+      radius: 17
+      thickness: 5
+      height: *id008
+      orient: vertical
+      life:
+      - 2.0
+      - 2.0
+      size: *id009
+      up: *id010
+      alpha: *id011
+      color: *id003
+      anim_rate: 0.8
+      motion: *id012
+      fade_out: 0.4
+      attach: true
+      count: 12
+      extra:
+      - - I_remap_count
+        - 0
+        - 12
+        - 0.1
+        - 2.0
+        - 1
+    - id: motes
+      tex: sarada_fragment
+      seq: &id013
+      - 0
+      - 3
+      shape: ring
+      radius: 20
+      thickness: 8
+      height: &id014
+      - 6
+      - 60
+      rate: 4
+      life:
+      - 1.6
+      - 2.4
+      size: &id015
+      - 1.3
+      - 2.3
+      up: &id016
+      - 6
+      - 12
+      alpha: &id017
+      - 200
+      - 250
+      color: *id003
+      rot: true
+      spin: &id018
+      - -70
+      - 70
+      motion: &id019
+      - type: orbit
+        speed: 0.08
+        direction: 1
+      fade_in: 0.25
+      fade_out: 0.35
+      attach: true
+    - id: motes_prime
+      tex: sarada_fragment
+      seq: *id013
+      shape: ring
+      radius: 20
+      thickness: 8
+      height: *id014
+      life:
+      - 2.4
+      - 2.4
+      size: *id015
+      up: *id016
+      alpha: *id017
+      color: *id003
+      rot: true
+      spin: *id018
+      motion: *id019
+      fade_out: 0.35
+      attach: true
+      count: 8
+      extra:
+      - - I_remap_count
+        - 0
+        - 8
+        - 0.12
+        - 2.4
+        - 1
+    - id: sparks
+      tex: sarada_spark
+      shape: ring
+      radius: 18
+      thickness: 6
+      height:
+      - 10
+      - 60
+      rate: 2.5
+      life:
+      - 0.4
+      - 0.7
+      size:
+      - 0.5
+      - 0.9
+      up:
+      - 8
+      - 16
+      alpha:
+      - 150
+      - 220
+      color: *id003
+      grow:
+      - 0.2
+      - 1.0
+      - 0.4
+      fade_out: 0.6
+      attach: true
+  sarada_activate:
+    about: activation du Mangekyō, 0,7 s (lancer sarada_aura à 0,45 s)
+    layers:
+    - id: eye
+      tex: sarada_spark
+      shape: point
+      count: 1
+      offset:
+      - 0
+      - 0
+      - 64.0
+      life:
+      - 0.32
+      - 0.32
+      size:
+      - 3
+      - 3
+      grow:
+      - 0.2
+      - 1.3
+      - 0.3
+      alpha: 255
+      color: *id003
+      fade_out: 0.6
+      attach: true
+    - id: pulse
+      tex: sarada_ring
+      seq:
+      - 0
+      - 0
+      shape: point
+      count: 1
+      delay: 0.1
+      offset:
+      - 0
+      - 0
+      - 44.0
+      life:
+      - 0.35
+      - 0.35
+      size:
+      - 30
+      - 30
+      grow:
+      - 0.25
+      - 1.25
+      - 0.3
+      alpha: 235
+      color: *id003
+      turn: 60
+      fade_out: 0.7
+      attach: true
+    - id: pulse_glow
+      tex: sarada_glow
+      shape: point
+      count: 1
+      delay: 0.1
+      offset:
+      - 0
+      - 0
+      - 44.0
+      life:
+      - 0.35
+      - 0.35
+      size:
+      - 38
+      - 38
+      grow:
+      - 0.3
+      - 1.2
+      - 0.3
+      alpha: 110
+      color: *id003
+      fade_out: 0.8
+      attach: true
+    - id: dark
+      tex: sarada_core
+      shape: point
+      count: 1
+      delay: 0.2
+      offset:
+      - 0
+      - 0
+      - 40.0
+      life:
+      - 0.5
+      - 0.5
+      size:
+      - 30
+      - 30
+      grow:
+      - 0.2
+      - 1.0
+      - 0.3
+      - 0.5
+      alpha: 170
+      color: *id003
+      fade_in_s: 0.05
+      fade_out: 0.5
+      attach: true
+    - id: ripple
+      tex: sarada_distort
+      seq:
+      - 0
+      - 0
+      shape: point
+      count: 1
+      delay: 0.2
+      offset:
+      - 0
+      - 0
+      - 40.0
+      life:
+      - 0.4
+      - 0.4
+      size:
+      - 40
+      - 40
+      grow:
+      - 0.25
+      - 1.15
+      - 0.3
+      alpha: 220
+      color: *id003
+      fade_out: 0.6
+      attach: true
+    - id: shards
+      tex: sarada_fragment
+      seq:
+      - 0
+      - 3
+      shape: sphere
+      spread:
+      - 4
+      - 8
+      count: 8
+      delay: 0.12
+      offset:
+      - 0
+      - 0
+      - 40.0
+      life:
+      - 0.4
+      - 0.55
+      size:
+      - 1.2
+      - 2.0
+      speed:
+      - 35
+      - 60
+      drag: 0.12
+      alpha: 245
+      color: *id003
+      rot: true
+      spin:
+      - -200
+      - 200
+      fade_out: 0.5
+      attach: true
+    - id: filaments
+      tex: sarada_filament
+      shape: ring
+      radius: 16
+      thickness: 4
+      height:
+      - 4
+      - 30
+      count: 8
+      delay: 0.35
+      orient: vertical
+      life:
+      - 0.4
+      - 0.6
+      size:
+      - 10
+      - 14
+      up:
+      - 25
+      - 40
+      alpha:
+      - 170
+      - 230
+      color: *id003
+      anim_rate: 1.5
+      fade_in: 0.3
+      fade_out: 0.5
+      attach: true
+  sarada_eye:
+    about: Mangekyō sur l'œil, rouge qui respire, en boucle (CP0 = l'œil)
+    layers:
+    - id: iris
+      tex: sarada_eye
+      shape: point
+      size: &id020
+      - 0.9
+      - 0.9
+      alpha: 255
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      rate: 0.625
+      life:
+      - 3.2
+      - 3.2
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: iris_prime
+      tex: sarada_eye
+      shape: point
+      size: *id020
+      alpha: 255
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      count: 1
+      life:
+      - 3.2
+      - 3.2
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: glint
+      tex: sarada_glow
+      shape: point
+      size: &id021
+      - 1.8
+      - 1.8
+      alpha: 45
+      color: *id003
+      pulse_alpha: &id022
+      - 0.25
+      - 0.6
+      attach: true
+      rate: 0.625
+      life:
+      - 3.2
+      - 3.2
+      fade_in: 0.5
+      fade_out: 0.5
+    - id: glint_prime
+      tex: sarada_glow
+      shape: point
+      size: *id021
+      alpha: 45
+      color: *id003
+      pulse_alpha: *id022
+      attach: true
+      count: 1
+      life:
+      - 3.2
+      - 3.2
+      fade_in_s: 0.06
+      fade_out: 0.5
+  sarada_target:
+    about: 'verrouillage d''une cible : acquire -> lock -> maintain en boucle (CP0 = pieds de la cible)'
+    layers:
+    - id: converge
+      tex: sarada_fragment
+      seq:
+      - 0
+      - 3
+      shape: ring
+      radius: 46
+      ring_even: true
+      ring_count: 6
+      count: 6
+      offset: &id023
+      - 0
+      - 0
+      - 40.0
+      life:
+      - 0.36
+      - 0.36
+      size:
+      - 3.4
+      - 3.4
+      speed:
+      - -150
+      - -150
+      drag: 0.06
+      alpha: 250
+      color: *id003
+      rot: true
+      spin:
+      - -120
+      - 120
+      fade_in_s: 0.06
+      fade_out: 0.25
+      attach: true
+    - id: lock
+      tex: sarada_ring
+      seq:
+      - 0
+      - 0
+      shape: point
+      count: 1
+      delay: 0.25
+      offset: *id023
+      life:
+      - 0.22
+      - 0.22
+      size:
+      - 22
+      - 22
+      grow:
+      - 1.8
+      - 1.0
+      - 0.3
+      alpha: 255
+      color: *id003
+      turn: 30
+      fade_in_s: 0.05
+      fade_out: 0.3
+      attach: true
+    - id: lock_spark
+      tex: sarada_spark
+      shape: point
+      count: 1
+      delay: 0.33
+      offset: *id023
+      life:
+      - 0.12
+      - 0.12
+      size:
+      - 3.5
+      - 3.5
+      grow:
+      - 0.4
+      - 1.2
+      - 0.3
+      alpha: 255
+      color: *id003
+      fade_out: 0.7
+      attach: true
+    - id: arcs
+      tex: sarada_ring
+      seq: &id024
+      - 0
+      - 0
+      shape: point
+      offset: *id023
+      size: &id025
+      - 22
+      - 22
+      alpha: 240
+      color: *id003
+      turn: 30
+      pulse_alpha: &id026
+      - 0.12
+      - 0.7
+      attach: true
+      delay: 0.35
+      rate: 0.083
+      life:
+      - 24.0
+      - 24.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: arcs_prime
+      tex: sarada_ring
+      seq: *id024
+      shape: point
+      offset: *id023
+      size: *id025
+      alpha: 240
+      color: *id003
+      turn: 30
+      pulse_alpha: *id026
+      attach: true
+      delay: 0.35
+      count: 1
+      life:
+      - 24.0
+      - 24.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: iris
+      tex: sarada_ring
+      seq: &id027
+      - 1
+      - 1
+      shape: point
+      offset: *id023
+      size: &id028
+      - 16
+      - 16
+      alpha: 230
+      color: *id003
+      turn: -40
+      attach: true
+      delay: 0.35
+      rate: 0.333
+      life:
+      - 6.0
+      - 6.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: iris_prime
+      tex: sarada_ring
+      seq: *id027
+      shape: point
+      offset: *id023
+      size: *id028
+      alpha: 230
+      color: *id003
+      turn: -40
+      attach: true
+      delay: 0.35
+      count: 1
+      life:
+      - 6.0
+      - 6.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.025
+    - id: ticks
+      tex: sarada_ring
+      seq: &id029
+      - 2
+      - 2
+      shape: point
+      offset: *id023
+      size: &id030
+      - 24
+      - 24
+      alpha: 200
+      color: *id003
+      turn: 15
+      attach: true
+      delay: 0.35
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ticks_prime
+      tex: sarada_ring
+      seq: *id029
+      shape: point
+      offset: *id023
+      size: *id030
+      alpha: 200
+      color: *id003
+      turn: 15
+      attach: true
+      delay: 0.35
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: pupil
+      tex: sarada_void
+      shape: point
+      offset: *id023
+      size: &id031
+      - 2.4
+      - 2.4
+      alpha: 230
+      color: *id003
+      pulse: 0.3
+      attach: true
+      delay: 0.35
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: pupil_prime
+      tex: sarada_void
+      shape: point
+      offset: *id023
+      size: *id031
+      alpha: 230
+      color: *id003
+      pulse: 0.3
+      attach: true
+      delay: 0.35
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.03
+    - id: pulled
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.1
+      - 0.14
+      shape: sphere
+      spread:
+      - 15
+      - 21
+      offset: *id023
+      speed:
+      - -28
+      - -20
+      rate: 6
+      life:
+      - 0.5
+      - 0.6
+      size:
+      - 0.5
+      - 0.8
+      alpha:
+      - 200
+      - 240
+      color: *id003
+      fade_in: 0.2
+      fade_out: 0.35
+      attach: true
+      delay: 0.35
+  sarada_target_release:
+    about: relâchement de la cible, 0,4 s (détruire sarada_target)
+    layers:
+    - id: arcs
+      tex: sarada_ring
+      seq:
+      - 0
+      - 0
+      shape: point
+      count: 1
+      offset: *id023
+      life:
+      - 0.4
+      - 0.4
+      size:
+      - 22
+      - 22
+      grow:
+      - 1.0
+      - 1.6
+      - 0.5
+      alpha: 240
+      color: *id003
+      turn: 90
+      fade_out: 0.8
+      attach: true
+    - id: iris
+      tex: sarada_ring
+      seq:
+      - 1
+      - 1
+      shape: point
+      count: 1
+      offset: *id023
+      life:
+      - 0.3
+      - 0.3
+      size:
+      - 16
+      - 16
+      grow:
+      - 1.0
+      - 0.3
+      - 0.5
+      alpha: 230
+      color: *id003
+      turn: -260
+      fade_out: 0.7
+      attach: true
+    - id: pupil
+      tex: sarada_void
+      shape: point
+      count: 1
+      offset: *id023
+      life:
+      - 0.25
+      - 0.25
+      size:
+      - 2.4
+      - 2.4
+      grow:
+      - 1.0
+      - 0.0
+      - 0.5
+      alpha: 230
+      color: *id003
+      attach: true
+    - id: ripple
+      tex: sarada_distort
+      seq:
+      - 1
+      - 1
+      shape: point
+      count: 1
+      offset: *id023
+      life:
+      - 0.35
+      - 0.35
+      size:
+      - 26
+      - 26
+      grow:
+      - 0.6
+      - 1.3
+      - 0.3
+      alpha: 200
+      color: *id003
+      fade_out: 0.7
+      attach: true
+    - id: scatter
+      tex: sarada_fragment
+      seq:
+      - 0
+      - 3
+      shape: ring
+      radius: 14
+      ring_even: true
+      ring_count: 6
+      count: 6
+      offset: *id023
+      life:
+      - 0.35
+      - 0.4
+      size:
+      - 1.6
+      - 2.0
+      speed:
+      - 70
+      - 100
+      drag: 0.1
+      alpha: 240
+      color: *id003
+      rot: true
+      spin:
+      - -200
+      - 200
+      fade_out: 0.6
+      attach: true
+  sarada_attract_trail:
+    about: traînée gravitationnelle du personnage attiré (CP0 = son buste, en mouvement)
+    layers:
+    - id: ribbon
+      tex: sarada_streak
+      render: rope
+      shape: point
+      offset: &id032
+      - 0
+      - 0
+      - 0
+      rate: 40
+      life:
+      - 0.38
+      - 0.38
+      size:
+      - 8
+      - 8
+      shrink: 0.05
+      alpha: 235
+      color: *id003
+      texel: 36
+      fade_out: 0.4
+    - id: filaments
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.12
+      - 0.18
+      shape: sphere
+      spread:
+      - 10
+      - 18
+      offset: *id032
+      rate: 26
+      life:
+      - 0.3
+      - 0.45
+      size:
+      - 0.7
+      - 1.1
+      pull: 900
+      drag: 0.05
+      alpha:
+      - 210
+      - 250
+      color: *id003
+      fade_in: 0.2
+      fade_out: 0.4
+    - id: void
+      tex: sarada_fragment
+      seq:
+      - 0
+      - 3
+      shape: sphere
+      spread:
+      - 6
+      - 14
+      offset: *id032
+      rate: 10
+      life:
+      - 0.4
+      - 0.6
+      size:
+      - 1.4
+      - 2.4
+      shrink: 0.0
+      alpha: 240
+      color: *id003
+      rot: true
+      spin:
+      - -160
+      - 160
+    - id: sparks
+      tex: sarada_spark
+      shape: sphere
+      spread:
+      - 4
+      - 12
+      offset: *id032
+      rate: 6
+      life:
+      - 0.2
+      - 0.3
+      size:
+      - 0.7
+      - 1.1
+      alpha: 200
+      color: *id003
+      fade_out: 0.6
+  ohirume_sphere:
+    about: sphère de gravité (noyau 16 u), se forme en 0,35 s puis boucle (CP0 = centre)
+    layers:
+    - id: distort
+      tex: ohirume_distort
+      shape: point
+      size: &id033
+      - 36.8
+      - 36.8
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      rate: 0.625
+      life:
+      - 3.2
+      - 3.2
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: distort_prime
+      tex: ohirume_distort
+      shape: point
+      size: *id033
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      count: 1
+      life:
+      - 3.2
+      - 3.2
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.109
+    - id: ring2
+      tex: ohirume_ring
+      seq: &id034
+      - 1
+      - 1
+      shape: point
+      size: &id035
+      - 23.489
+      - 23.489
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha: &id036
+      - 0.2
+      - 0.5
+      attach: true
+      rate: 0.069
+      life:
+      - 28.8
+      - 28.8
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring2_prime
+      tex: ohirume_ring
+      seq: *id034
+      shape: point
+      size: *id035
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha: *id036
+      attach: true
+      count: 1
+      life:
+      - 28.8
+      - 28.8
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: ring
+      tex: ohirume_ring
+      seq: &id037
+      - 0
+      - 0
+      shape: point
+      size: &id038
+      - 21.277
+      - 21.277
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      rate: 0.111
+      life:
+      - 18.0
+      - 18.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring_prime
+      tex: ohirume_ring
+      seq: *id037
+      shape: point
+      size: *id038
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      count: 1
+      life:
+      - 18.0
+      - 18.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.017
+    - id: shell
+      tex: ohirume_core
+      shape: point
+      size: &id039
+      - 20.0
+      - 20.0
+      alpha: 255
+      color: *id003
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: shell_prime
+      tex: ohirume_core
+      shape: point
+      size: *id039
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.075
+    - id: void
+      tex: ohirume_void
+      shape: point
+      size: &id040
+      - 20.0
+      - 20.0
+      alpha: 255
+      color: *id003
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void_prime
+      tex: ohirume_void
+      shape: point
+      size: *id040
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.075
+    - id: gravity
+      tex: ohirume_gravity
+      render: trail
+      trail: &id041
+      - 0.16
+      - 0.22
+      shape: sphere
+      spread: &id042
+      - 35.2
+      - 46.4
+      speed: &id043
+      - -38.4
+      - -27.2
+      pull: 112.0
+      drag: 0.04
+      rate: 16.0
+      life:
+      - 0.45
+      - 0.6
+      size: &id044
+      - 1.44
+      - 2.24
+      alpha: &id045
+      - 200
+      - 245
+      color: *id003
+      fade_in: 0.25
+      fade_near: &id046
+      - 0
+      - 15.2
+      - 20.8
+      attach: true
+    - id: gravity_prime
+      tex: ohirume_gravity
+      render: trail
+      trail: *id041
+      shape: sphere
+      spread: *id042
+      speed: *id043
+      pull: 112.0
+      drag: 0.04
+      life:
+      - 0.6
+      - 0.6
+      size: *id044
+      alpha: *id045
+      color: *id003
+      fade_near: *id046
+      attach: true
+      count: 8
+      extra:
+      - - I_remap_count
+        - 0
+        - 8
+        - 0.03
+        - 0.6
+        - 1
+    - id: debris
+      tex: ohirume_fragment
+      seq: &id047
+      - 0
+      - 3
+      shape: sphere
+      spread: &id048
+      - 32.0
+      - 44.8
+      speed: &id049
+      - -17.6
+      - -11.2
+      twist: 48.0
+      rate: 2.2
+      life:
+      - 0.9
+      - 1.2
+      size: &id050
+      - 1.6
+      - 2.4
+      alpha: 245
+      color: *id003
+      rot: true
+      spin: &id051
+      - -120
+      - 120
+      fade_in: 0.2
+      fade_near: &id052
+      - 0
+      - 15.2
+      - 20.0
+      attach: true
+    - id: debris_prime
+      tex: ohirume_fragment
+      seq: *id047
+      shape: sphere
+      spread: *id048
+      speed: *id049
+      twist: 48.0
+      life:
+      - 1.2
+      - 1.2
+      size: *id050
+      alpha: 245
+      color: *id003
+      rot: true
+      spin: *id051
+      fade_near: *id052
+      attach: true
+      count: 2
+      extra:
+      - - I_remap_count
+        - 0
+        - 2
+        - 0.06
+        - 1.2
+        - 1
+  ohirume_sphere_s:
+    about: sphère de gravité (noyau 6 u), se forme en 0,35 s puis boucle (CP0 = centre)
+    layers:
+    - id: distort
+      tex: ohirume_distort
+      shape: point
+      size: &id053
+      - 13.8
+      - 13.8
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      rate: 0.625
+      life:
+      - 3.2
+      - 3.2
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: distort_prime
+      tex: ohirume_distort
+      shape: point
+      size: *id053
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      count: 1
+      life:
+      - 3.2
+      - 3.2
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.109
+    - id: ring2
+      tex: ohirume_ring
+      seq: &id054
+      - 1
+      - 1
+      shape: point
+      size: &id055
+      - 8.809
+      - 8.809
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha: &id056
+      - 0.2
+      - 0.5
+      attach: true
+      rate: 0.069
+      life:
+      - 28.8
+      - 28.8
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring2_prime
+      tex: ohirume_ring
+      seq: *id054
+      shape: point
+      size: *id055
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha: *id056
+      attach: true
+      count: 1
+      life:
+      - 28.8
+      - 28.8
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: ring
+      tex: ohirume_ring
+      seq: &id057
+      - 0
+      - 0
+      shape: point
+      size: &id058
+      - 7.979
+      - 7.979
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      rate: 0.111
+      life:
+      - 18.0
+      - 18.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring_prime
+      tex: ohirume_ring
+      seq: *id057
+      shape: point
+      size: *id058
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      count: 1
+      life:
+      - 18.0
+      - 18.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.017
+    - id: shell
+      tex: ohirume_core
+      shape: point
+      size: &id059
+      - 7.5
+      - 7.5
+      alpha: 255
+      color: *id003
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: shell_prime
+      tex: ohirume_core
+      shape: point
+      size: *id059
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.075
+    - id: void
+      tex: ohirume_void
+      shape: point
+      size: &id060
+      - 7.5
+      - 7.5
+      alpha: 255
+      color: *id003
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void_prime
+      tex: ohirume_void
+      shape: point
+      size: *id060
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.075
+    - id: gravity
+      tex: ohirume_gravity
+      render: trail
+      trail: &id061
+      - 0.16
+      - 0.22
+      shape: sphere
+      spread: &id062
+      - 13.2
+      - 17.4
+      speed: &id063
+      - -14.4
+      - -10.2
+      pull: 42.0
+      drag: 0.04
+      rate: 8.0
+      life:
+      - 0.45
+      - 0.6
+      size: &id064
+      - 0.54
+      - 0.84
+      alpha: &id065
+      - 200
+      - 245
+      color: *id003
+      fade_in: 0.25
+      fade_near: &id066
+      - 0
+      - 5.7
+      - 7.8
+      attach: true
+    - id: gravity_prime
+      tex: ohirume_gravity
+      render: trail
+      trail: *id061
+      shape: sphere
+      spread: *id062
+      speed: *id063
+      pull: 42.0
+      drag: 0.04
+      life:
+      - 0.6
+      - 0.6
+      size: *id064
+      alpha: *id065
+      color: *id003
+      fade_near: *id066
+      attach: true
+      count: 4
+      extra:
+      - - I_remap_count
+        - 0
+        - 4
+        - 0.03
+        - 0.6
+        - 1
+    - id: debris
+      tex: ohirume_fragment
+      seq: &id067
+      - 0
+      - 3
+      shape: sphere
+      spread: &id068
+      - 12.0
+      - 16.8
+      speed: &id069
+      - -6.6
+      - -4.2
+      twist: 18.0
+      rate: 1.1
+      life:
+      - 0.9
+      - 1.2
+      size: &id070
+      - 0.6
+      - 0.9
+      alpha: 245
+      color: *id003
+      rot: true
+      spin: &id071
+      - -120
+      - 120
+      fade_in: 0.2
+      fade_near: &id072
+      - 0
+      - 5.7
+      - 7.5
+      attach: true
+    - id: debris_prime
+      tex: ohirume_fragment
+      seq: *id067
+      shape: sphere
+      spread: *id068
+      speed: *id069
+      twist: 18.0
+      life:
+      - 1.2
+      - 1.2
+      size: *id070
+      alpha: 245
+      color: *id003
+      rot: true
+      spin: *id071
+      fade_near: *id072
+      attach: true
+      count: 1
+      extra:
+      - - I_remap_count
+        - 0
+        - 1
+        - 0.06
+        - 1.2
+        - 1
+  ohirume_sphere_l:
+    about: sphère de gravité (noyau 36 u), se forme en 0,35 s puis boucle (CP0 = centre)
+    layers:
+    - id: distort
+      tex: ohirume_distort
+      shape: point
+      size: &id073
+      - 82.8
+      - 82.8
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      rate: 0.625
+      life:
+      - 3.2
+      - 3.2
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: distort_prime
+      tex: ohirume_distort
+      shape: point
+      size: *id073
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      count: 1
+      life:
+      - 3.2
+      - 3.2
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.109
+    - id: ring2
+      tex: ohirume_ring
+      seq: &id074
+      - 1
+      - 1
+      shape: point
+      size: &id075
+      - 52.851
+      - 52.851
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha: &id076
+      - 0.2
+      - 0.5
+      attach: true
+      rate: 0.069
+      life:
+      - 28.8
+      - 28.8
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring2_prime
+      tex: ohirume_ring
+      seq: *id074
+      shape: point
+      size: *id075
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha: *id076
+      attach: true
+      count: 1
+      life:
+      - 28.8
+      - 28.8
+      fade_in_s: 0.06
+      fade_out: 0.25
+    - id: ring
+      tex: ohirume_ring
+      seq: &id077
+      - 0
+      - 0
+      shape: point
+      size: &id078
+      - 47.872
+      - 47.872
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      rate: 0.111
+      life:
+      - 18.0
+      - 18.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring_prime
+      tex: ohirume_ring
+      seq: *id077
+      shape: point
+      size: *id078
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      count: 1
+      life:
+      - 18.0
+      - 18.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.017
+    - id: shell
+      tex: ohirume_core
+      shape: point
+      size: &id079
+      - 45.0
+      - 45.0
+      alpha: 255
+      color: *id003
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: shell_prime
+      tex: ohirume_core
+      shape: point
+      size: *id079
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.075
+    - id: void
+      tex: ohirume_void
+      shape: point
+      size: &id080
+      - 45.0
+      - 45.0
+      alpha: 255
+      color: *id003
+      attach: true
+      rate: 0.5
+      life:
+      - 4.0
+      - 4.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void_prime
+      tex: ohirume_void
+      shape: point
+      size: *id080
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 4.0
+      - 4.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.075
+    - id: gravity
+      tex: ohirume_gravity
+      render: trail
+      trail: &id081
+      - 0.16
+      - 0.22
+      shape: sphere
+      spread: &id082
+      - 79.2
+      - 104.4
+      speed: &id083
+      - -86.4
+      - -61.2
+      pull: 252.0
+      drag: 0.04
+      rate: 36.0
+      life:
+      - 0.45
+      - 0.6
+      size: &id084
+      - 3.24
+      - 5.04
+      alpha: &id085
+      - 200
+      - 245
+      color: *id003
+      fade_in: 0.25
+      fade_near: &id086
+      - 0
+      - 34.2
+      - 46.8
+      attach: true
+    - id: gravity_prime
+      tex: ohirume_gravity
+      render: trail
+      trail: *id081
+      shape: sphere
+      spread: *id082
+      speed: *id083
+      pull: 252.0
+      drag: 0.04
+      life:
+      - 0.6
+      - 0.6
+      size: *id084
+      alpha: *id085
+      color: *id003
+      fade_near: *id086
+      attach: true
+      count: 18
+      extra:
+      - - I_remap_count
+        - 0
+        - 18
+        - 0.03
+        - 0.6
+        - 1
+    - id: debris
+      tex: ohirume_fragment
+      seq: &id087
+      - 0
+      - 3
+      shape: sphere
+      spread: &id088
+      - 72.0
+      - 100.8
+      speed: &id089
+      - -39.6
+      - -25.2
+      twist: 108.0
+      rate: 4.95
+      life:
+      - 0.9
+      - 1.2
+      size: &id090
+      - 3.6
+      - 5.4
+      alpha: 245
+      color: *id003
+      rot: true
+      spin: &id091
+      - -120
+      - 120
+      fade_in: 0.2
+      fade_near: &id092
+      - 0
+      - 34.2
+      - 45.0
+      attach: true
+    - id: debris_prime
+      tex: ohirume_fragment
+      seq: *id087
+      shape: sphere
+      spread: *id088
+      speed: *id089
+      twist: 108.0
+      life:
+      - 1.2
+      - 1.2
+      size: *id090
+      alpha: 245
+      color: *id003
+      rot: true
+      spin: *id091
+      fade_near: *id092
+      attach: true
+      count: 5
+      extra:
+      - - I_remap_count
+        - 0
+        - 5
+        - 0.06
+        - 1.2
+        - 1
+  ohirume_sphere_end:
+    about: la sphère (taille normale) se résorbe, 0,35 s
+    layers:
+    - id: void
+      tex: ohirume_void
+      shape: point
+      size:
+      - 20.0
+      - 20.0
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 0.35
+      - 0.35
+      grow:
+      - 1.0
+      - 0.0
+      - 0.65
+      fade_out: 0.3
+    - id: shell
+      tex: ohirume_core
+      shape: point
+      size:
+      - 20.0
+      - 20.0
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 0.35
+      - 0.35
+      grow:
+      - 1.0
+      - 0.0
+      - 0.65
+      fade_out: 0.3
+    - id: ring
+      tex: ohirume_ring
+      seq:
+      - 0
+      - 0
+      shape: point
+      size:
+      - 21.277
+      - 21.277
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      count: 1
+      life:
+      - 0.35
+      - 0.35
+      grow:
+      - 1.0
+      - 0.0
+      - 0.65
+      fade_out: 0.3
+    - id: distort
+      tex: ohirume_distort
+      shape: point
+      size:
+      - 36.8
+      - 36.8
+      alpha: 150
+      color: *id003
+      anim_rate: 2.5
+      attach: true
+      count: 1
+      life:
+      - 0.27999999999999997
+      - 0.27999999999999997
+      grow:
+      - 1.0
+      - 0.35
+      - 0.5
+      fade_out: 0.7
+    - id: release
+      tex: ohirume_fragment
+      seq:
+      - 0
+      - 3
+      shape: sphere
+      spread:
+      - 17.6
+      - 20.8
+      speed:
+      - 32.0
+      - 48.0
+      twist: 0
+      life:
+      - 0.3
+      - 0.35
+      size:
+      - 1.6
+      - 2.4
+      alpha: 245
+      color: *id003
+      rot: true
+      spin:
+      - -120
+      - 120
+      fade_in: 0.2
+      attach: true
+      count: 6
+      fade_out: 0.6
+  ohirume_projectile:
+    about: 'sphère lancée : charge 0,45 s, vol 0.55 s CP0 -> CP1, impact à CP1'
+    layers:
+    - id: void
+      tex: ohirume_void
+      shape: point
+      size: &id099
+      - 12.5
+      - 12.5
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.6
+      fade_out_s: 0.03
+    - id: shell
+      tex: ohirume_core
+      shape: point
+      size: &id098
+      - 12.5
+      - 12.5
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.6
+      fade_out_s: 0.03
+    - id: ring
+      tex: ohirume_ring
+      seq: &id094
+      - 0
+      - 0
+      shape: point
+      size: &id095
+      - 13.298
+      - 13.298
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.6
+      fade_out_s: 0.03
+    - id: distort
+      tex: ohirume_distort
+      shape: point
+      size: &id093
+      - 23.0
+      - 23.0
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      attach: true
+      count: 1
+      life:
+      - 0.45
+      - 0.45
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.6
+      fade_out_s: 0.03
+    - id: charge
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.16
+      - 0.22
+      shape: sphere
+      spread:
+      - 22.0
+      - 29.0
+      speed:
+      - -24.0
+      - -17.0
+      pull: 140.0
+      drag: 0.04
+      rate: 40
+      life:
+      - 0.25
+      - 0.32
+      size:
+      - 0.9
+      - 1.4
+      alpha:
+      - 200
+      - 245
+      color: *id003
+      fade_in: 0.25
+      fade_near:
+      - 0
+      - 9.5
+      - 13.0
+      attach: true
+      delay: 0.12
+      duration: 0.33
+    - id: launch_wave
+      tex: ohirume_ring
+      seq:
+      - 1
+      - 1
+      shape: point
+      size:
+      - 30.0
+      - 30.0
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha:
+      - 0.2
+      - 0.5
+      attach: true
+      count: 1
+      delay: 0.43
+      life:
+      - 0.22
+      - 0.22
+      grow:
+      - 0.3
+      - 1.0
+      - 0.3
+      fade_out: 0.7
+    - id: distort_fly
+      tex: ohirume_distort
+      shape: point
+      size: *id093
+      alpha: 150
+      color: *id003
+      anim_rate: 0.625
+      count: 1
+      delay: 0.45
+      life: &id096
+      - 0.5700000000000001
+      - 0.5700000000000001
+      path_travel: &id097
+      - 0.55
+      - 0
+      - 0
+      - 0
+      - 0
+      cp: 0
+      cp_end: 1
+    - id: ring_fly
+      tex: ohirume_ring
+      seq: *id094
+      shape: point
+      size: *id095
+      alpha: 245
+      color: *id003
+      turn: 40
+      count: 1
+      delay: 0.45
+      life: *id096
+      path_travel: *id097
+      cp: 0
+      cp_end: 1
+    - id: shell_fly
+      tex: ohirume_core
+      shape: point
+      size: *id098
+      alpha: 255
+      color: *id003
+      count: 1
+      delay: 0.45
+      life: *id096
+      path_travel: *id097
+      cp: 0
+      cp_end: 1
+    - id: void_fly
+      tex: ohirume_void
+      shape: point
+      size: *id099
+      alpha: 255
+      color: *id003
+      count: 1
+      delay: 0.45
+      life: *id096
+      path_travel: *id097
+      cp: 0
+      cp_end: 1
+    - id: wake
+      tex: ohirume_streak
+      render: rope
+      shape: chain_seq
+      cp: 0
+      cp_end: 1
+      path_count: 38
+      spread:
+      - 0
+      - 0
+      rate: 70
+      duration: 0.55
+      delay: 0.45
+      life:
+      - 0.3
+      - 0.3
+      size:
+      - 5.5
+      - 5.5
+      shrink: 0.05
+      alpha: 235
+      color: *id003
+      texel: 30.0
+      fade_out: 0.4
+    - id: swallowed
+      tex: ohirume_fragment
+      seq:
+      - 0
+      - 3
+      shape: chain_seq
+      cp: 0
+      cp_end: 1
+      path_count: 22
+      spread:
+      - 0
+      - 18.0
+      rate: 40
+      duration: 0.55
+      delay: 0.45
+      life:
+      - 0.22
+      - 0.3
+      size:
+      - 1.4
+      - 2.2
+      shrink: 0.0
+      alpha: 240
+      color: *id003
+      rot: true
+      spin:
+      - -200
+      - 200
+    - id: squeeze
+      tex: ohirume_ring
+      seq: &id100
+      - 0
+      - 0
+      shape: point
+      size:
+      - 30.0
+      - 30.0
+      alpha: 245
+      color: *id003
+      turn: 220
+      cp: 1
+      count: 1
+      delay: 0.98
+      life:
+      - 0.13
+      - 0.13
+      grow:
+      - 1.0
+      - 0.15
+      - 0.6
+      fade_in_s: 0.03
+    - id: suck
+      tex: ohirume_distort
+      shape: point
+      size:
+      - 32.0
+      - 32.0
+      alpha: 150
+      color: *id003
+      anim_rate: 5
+      cp: 1
+      count: 1
+      delay: 0.98
+      life:
+      - 0.14
+      - 0.14
+      grow:
+      - 1.0
+      - 0.2
+      - 0.6
+      fade_in_s: 0.03
+      fade_out: 0.2
+    - id: inrush
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.05
+      - 0.07
+      shape: sphere
+      cp: 1
+      spread:
+      - 22.0
+      - 28.0
+      speed:
+      - -200.0
+      - -150.0
+      count: 14
+      delay: 0.98
+      life:
+      - 0.11
+      - 0.12
+      size:
+      - 0.6
+      - 0.9
+      alpha: 240
+      color: *id003
+    - id: flash
+      tex: sarada_spark
+      shape: point
+      cp: 1
+      count: 1
+      delay: 1.1
+      life:
+      - 0.07
+      - 0.07
+      size:
+      - 9.0
+      - 9.0
+      grow:
+      - 0.5
+      - 1.2
+      - 0.3
+      alpha: 255
+      color: *id003
+      rot: true
+    - id: wave
+      tex: ohirume_ring
+      seq: *id100
+      shape: point
+      size:
+      - 24.0
+      - 24.0
+      alpha: 245
+      color: *id003
+      turn: 60
+      cp: 1
+      count: 1
+      delay: 1.11
+      life:
+      - 0.3
+      - 0.3
+      grow:
+      - 0.2
+      - 1.0
+      - 0.25
+      fade_out: 0.7
+    - id: wave2
+      tex: ohirume_ring
+      seq:
+      - 1
+      - 1
+      shape: point
+      size:
+      - 30.0
+      - 30.0
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha:
+      - 0.2
+      - 0.5
+      cp: 1
+      count: 1
+      delay: 1.1500000000000001
+      life:
+      - 0.28
+      - 0.28
+      grow:
+      - 0.2
+      - 1.0
+      - 0.25
+      fade_out: 0.8
+    - id: needles
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.05
+      - 0.08
+      shape: sphere
+      cp: 1
+      spread:
+      - 3.0
+      - 5.0
+      speed:
+      - 140.0
+      - 200.0
+      drag: 0.12
+      count: 10
+      delay: 1.11
+      life:
+      - 0.16
+      - 0.22
+      size:
+      - 0.5
+      - 0.8
+      alpha: 230
+      color: *id003
+      fade_out: 0.5
+    - id: collapse
+      tex: ohirume_void
+      shape: point
+      size:
+      - 7.5
+      - 7.5
+      alpha: 255
+      color: *id003
+      cp: 1
+      count: 1
+      delay: 1.1
+      life:
+      - 0.36
+      - 0.36
+      grow:
+      - 1.4
+      - 0.0
+      - 0.55
+      fade_in_s: 0.02
+    - id: collapse_shell
+      tex: ohirume_core
+      shape: point
+      size:
+      - 7.5
+      - 7.5
+      alpha: 255
+      color: *id003
+      cp: 1
+      count: 1
+      delay: 1.1
+      life:
+      - 0.36
+      - 0.36
+      grow:
+      - 1.4
+      - 0.0
+      - 0.55
+      fade_in_s: 0.02
+  ohirume_pull:
+    about: attraction de la cible (CP1) vers la sphère (CP0), en boucle
+    layers:
+    - shape: sphere
+      spread: &id101
+      - 6
+      - 26
+      color: *id003
+      fade_near: &id102
+      - 0
+      - 12
+      - 20
+      cp: 1
+      cp_end: 0
+      path_travel: &id103
+      - 0.6
+      - 26
+      - 12
+      - 0
+      - 8
+      id: filaments
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.3
+      - 0.42
+      rate: 30
+      life:
+      - 0.6
+      - 0.66
+      size:
+      - 0.4
+      - 0.6
+      alpha:
+      - 200
+      - 240
+      fade_in: 0.15
+    - shape: sphere
+      spread: *id101
+      color: *id003
+      fade_near: *id102
+      cp: 1
+      cp_end: 0
+      path_travel: *id103
+      id: streaks
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.12
+      - 0.18
+      rate: 18
+      life:
+      - 0.6
+      - 0.66
+      size:
+      - 0.8
+      - 1.2
+      alpha:
+      - 225
+      - 255
+      fade_in: 0.12
+    - shape: sphere
+      spread: *id101
+      color: *id003
+      fade_near: *id102
+      cp: 1
+      cp_end: 0
+      path_travel: *id103
+      id: fragments
+      tex: ohirume_fragment
+      seq:
+      - 0
+      - 3
+      rate: 7
+      life:
+      - 0.6
+      - 0.66
+      size:
+      - 1.2
+      - 2.0
+      alpha: 245
+      rot: true
+      spin:
+      - -200
+      - 200
+      fade_in: 0.15
+    - shape: sphere
+      spread: *id101
+      color: *id003
+      fade_near: *id102
+      cp: 1
+      cp_end: 0
+      path_travel: *id103
+      id: sparks
+      tex: sarada_spark
+      rate: 4
+      life:
+      - 0.6
+      - 0.66
+      size:
+      - 0.6
+      - 1.0
+      alpha: 210
+      fade_in: 0.3
+  ohirume_impact:
+    about: compression gravitationnelle, ~0,5 s (CP0 = point d'impact)
+    layers:
+    - id: squeeze
+      tex: ohirume_ring
+      seq: &id104
+      - 0
+      - 0
+      shape: point
+      size:
+      - 36.0
+      - 36.0
+      alpha: 245
+      color: *id003
+      turn: 220
+      cp: 0
+      count: 1
+      delay: 0.0
+      life:
+      - 0.13
+      - 0.13
+      grow:
+      - 1.0
+      - 0.15
+      - 0.6
+      fade_in_s: 0.03
+    - id: suck
+      tex: ohirume_distort
+      shape: point
+      size:
+      - 38.4
+      - 38.4
+      alpha: 150
+      color: *id003
+      anim_rate: 5
+      cp: 0
+      count: 1
+      delay: 0.0
+      life:
+      - 0.14
+      - 0.14
+      grow:
+      - 1.0
+      - 0.2
+      - 0.6
+      fade_in_s: 0.03
+      fade_out: 0.2
+    - id: inrush
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.05
+      - 0.07
+      shape: sphere
+      cp: 0
+      spread:
+      - 26.4
+      - 33.6
+      speed:
+      - -240.0
+      - -180.0
+      count: 14
+      delay: 0.0
+      life:
+      - 0.11
+      - 0.12
+      size:
+      - 0.6
+      - 0.9
+      alpha: 240
+      color: *id003
+    - id: flash
+      tex: sarada_spark
+      shape: point
+      cp: 0
+      count: 1
+      delay: 0.12
+      life:
+      - 0.07
+      - 0.07
+      size:
+      - 10.8
+      - 10.8
+      grow:
+      - 0.5
+      - 1.2
+      - 0.3
+      alpha: 255
+      color: *id003
+      rot: true
+    - id: wave
+      tex: ohirume_ring
+      seq: *id104
+      shape: point
+      size:
+      - 28.8
+      - 28.8
+      alpha: 245
+      color: *id003
+      turn: 60
+      cp: 0
+      count: 1
+      delay: 0.13
+      life:
+      - 0.3
+      - 0.3
+      grow:
+      - 0.2
+      - 1.0
+      - 0.25
+      fade_out: 0.7
+    - id: wave2
+      tex: ohirume_ring
+      seq:
+      - 1
+      - 1
+      shape: point
+      size:
+      - 36.0
+      - 36.0
+      alpha: 170
+      color: *id003
+      turn: -25
+      pulse_alpha:
+      - 0.2
+      - 0.5
+      cp: 0
+      count: 1
+      delay: 0.16999999999999998
+      life:
+      - 0.28
+      - 0.28
+      grow:
+      - 0.2
+      - 1.0
+      - 0.25
+      fade_out: 0.8
+    - id: needles
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.05
+      - 0.08
+      shape: sphere
+      cp: 0
+      spread:
+      - 3.6
+      - 6.0
+      speed:
+      - 168.0
+      - 240.0
+      drag: 0.12
+      count: 10
+      delay: 0.13
+      life:
+      - 0.16
+      - 0.22
+      size:
+      - 0.5
+      - 0.8
+      alpha: 230
+      color: *id003
+      fade_out: 0.5
+    - id: collapse
+      tex: ohirume_void
+      shape: point
+      size:
+      - 9.0
+      - 9.0
+      alpha: 255
+      color: *id003
+      cp: 0
+      count: 1
+      delay: 0.12
+      life:
+      - 0.36
+      - 0.36
+      grow:
+      - 1.4
+      - 0.0
+      - 0.55
+      fade_in_s: 0.02
+    - id: collapse_shell
+      tex: ohirume_core
+      shape: point
+      size:
+      - 9.0
+      - 9.0
+      alpha: 255
+      color: *id003
+      cp: 0
+      count: 1
+      delay: 0.12
+      life:
+      - 0.36
+      - 0.36
+      grow:
+      - 1.4
+      - 0.0
+      - 0.55
+      fade_in_s: 0.02
+  ohirume_implosion:
+    about: la sphère s'effondre sur elle-même, ~1,15 s (CP0 = centre)
+    layers:
+    - id: void
+      tex: ohirume_void
+      shape: point
+      size:
+      - 20.0
+      - 20.0
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 0.9
+      - 0.9
+      extra: &id105
+      - - O_rscale
+        - 1.0
+        - 1.35
+        - 0.0
+        - 0.28
+        - 0.35
+      - - O_rscale
+        - 1.35
+        - 0.3
+        - 0.55
+        - 0.93
+        - 0.7
+      - - O_rscale
+        - 0.3
+        - 0.0
+        - 0.93
+        - 1.0
+        - 0.5
+    - id: shell
+      tex: ohirume_core
+      shape: point
+      size:
+      - 20.0
+      - 20.0
+      alpha: 255
+      color: *id003
+      attach: true
+      count: 1
+      life:
+      - 0.9
+      - 0.9
+      extra: *id105
+    - id: ring
+      tex: ohirume_ring
+      seq: &id110
+      - 0
+      - 0
+      shape: point
+      size:
+      - 21.277
+      - 21.277
+      alpha: 245
+      color: *id003
+      turn: 90
+      attach: true
+      count: 1
+      life:
+      - 0.9
+      - 0.9
+      extra: *id105
+      pulse_alpha:
+      - 0.6
+      - 6
+    - id: ring2
+      tex: ohirume_ring
+      seq:
+      - 1
+      - 1
+      shape: point
+      size:
+      - 23.489
+      - 23.489
+      alpha: 170
+      color: *id003
+      turn: -70
+      pulse_alpha:
+      - 0.2
+      - 0.5
+      attach: true
+      count: 1
+      life:
+      - 0.855
+      - 0.855
+      extra: *id105
+    - id: distort
+      tex: ohirume_distort
+      shape: point
+      size:
+      - 36.8
+      - 36.8
+      alpha: 150
+      color: *id003
+      anim_rate: 1.8
+      attach: true
+      count: 1
+      life:
+      - 0.9
+      - 0.9
+      extra: *id105
+    - id: gravity
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.16
+      - 0.22
+      shape: sphere
+      spread: &id106
+      - 35.2
+      - 46.4
+      speed:
+      - -38.4
+      - -27.2
+      pull: 112.0
+      drag: 0.04
+      rate: 10
+      life:
+      - 0.45
+      - 0.6
+      size: &id107
+      - 1.44
+      - 2.24
+      alpha: &id108
+      - 200
+      - 245
+      color: *id003
+      fade_in: 0.25
+      fade_near: &id109
+      - 0
+      - 15.2
+      - 20.8
+      attach: true
+      duration: 0.5
+    - id: rush
+      tex: ohirume_gravity
+      render: trail
+      trail:
+      - 0.06
+      - 0.1
+      shape: sphere
+      spread: *id106
+      speed:
+      - -80.0
+      - -64.0
+      pull: 288.0
+      drag: 0.04
+      rate: 55
+      life:
+      - 0.22
+      - 0.3
+      size: *id107
+      alpha: *id108
+      color: *id003
+      fade_in: 0.25
+      fade_near: *id109
+      attach: true
+      delay: 0.48
+      duration: 0.36
+    - id: flash
+      tex: sarada_spark
+      shape: point
+      count: 1
+      delay: 0.84
+      life:
+      - 0.07
+      - 0.07
+      size:
+      - 12.8
+      - 12.8
+      grow:
+      - 0.4
+      - 1.2
+      - 0.3
+      alpha: 255
+      color: *id003
+      rot: true
+      attach: true
+    - id: snap
+      tex: ohirume_ring
+      seq: *id110
+      shape: point
+      size:
+      - 25.6
+      - 25.6
+      alpha: 245
+      color: *id003
+      turn: 40
+      attach: true
+      count: 1
+      delay: 0.84
+      life:
+      - 0.14
+      - 0.14
+      grow:
+      - 0.1
+      - 1.0
+      - 0.3
+      fade_out: 0.7
+    - id: remains
+      tex: ohirume_fragment
+      seq:
+      - 0
+      - 3
+      shape: sphere
+      spread:
+      - 1
+      - 3
+      speed:
+      - 9.6
+      - 19.2
+      twist: 0
+      life:
+      - 0.25
+      - 0.32
+      size:
+      - 1.6
+      - 2.4
+      alpha: 245
+      color: *id003
+      rot: true
+      spin:
+      - -120
+      - 120
+      fade_in: 0.2
+      attach: true
+      count: 6
+      delay: 0.86
+      fade_out: 0.6
+  ohirume_orbit:
+    about: 4 sphères en orbite autour de Sarada, en boucle (CP0 = pieds)
+    layers:
+    - id: dist0
+      tex: ohirume_distort
+      size: &id111
+      - 14.95
+      - 14.95
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: &id112
+      - 0
+      - 0
+      - 50
+      motion: &id113
+      - type: orbit
+        speed: 0.5
+        direction: 1
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: dist0_prime
+      tex: ohirume_distort
+      size: *id111
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring20
+      tex: ohirume_ring
+      seq: &id114
+      - 1
+      - 1
+      size: &id115
+      - 9.543
+      - 9.543
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: &id116
+      - 0.2
+      - 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring20_prime
+      tex: ohirume_ring
+      seq: *id114
+      size: *id115
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: *id116
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring0
+      tex: ohirume_ring
+      seq: &id117
+      - 0
+      - 0
+      size: &id118
+      - 8.644
+      - 8.644
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring0_prime
+      tex: ohirume_ring
+      seq: *id117
+      size: *id118
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: core0
+      tex: ohirume_core
+      size: &id119
+      - 8.125
+      - 8.125
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: core0_prime
+      tex: ohirume_core
+      size: *id119
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: void0
+      tex: ohirume_void
+      size: &id120
+      - 8.125
+      - 8.125
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void0_prime
+      tex: ohirume_void
+      size: *id120
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 0
+      offset: *id112
+      motion: *id113
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: dist1
+      tex: ohirume_distort
+      size: &id121
+      - 10.35
+      - 10.35
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: &id122
+      - 0
+      - 0
+      - 40
+      motion: &id123
+      - type: orbit
+        speed: 0.5
+        direction: 1
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: dist1_prime
+      tex: ohirume_distort
+      size: *id121
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring21
+      tex: ohirume_ring
+      seq: &id124
+      - 1
+      - 1
+      size: &id125
+      - 6.606
+      - 6.606
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: &id126
+      - 0.2
+      - 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring21_prime
+      tex: ohirume_ring
+      seq: *id124
+      size: *id125
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: *id126
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring1
+      tex: ohirume_ring
+      seq: &id127
+      - 0
+      - 0
+      size: &id128
+      - 5.984
+      - 5.984
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring1_prime
+      tex: ohirume_ring
+      seq: *id127
+      size: *id128
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: core1
+      tex: ohirume_core
+      size: &id129
+      - 5.625
+      - 5.625
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: core1_prime
+      tex: ohirume_core
+      size: *id129
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: void1
+      tex: ohirume_void
+      size: &id130
+      - 5.625
+      - 5.625
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void1_prime
+      tex: ohirume_void
+      size: *id130
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 90
+      offset: *id122
+      motion: *id123
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: dist2
+      tex: ohirume_distort
+      size: &id131
+      - 18.4
+      - 18.4
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: &id132
+      - 0
+      - 0
+      - 58
+      motion: &id133
+      - type: orbit
+        speed: 0.5
+        direction: 1
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: dist2_prime
+      tex: ohirume_distort
+      size: *id131
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring22
+      tex: ohirume_ring
+      seq: &id134
+      - 1
+      - 1
+      size: &id135
+      - 11.745
+      - 11.745
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: &id136
+      - 0.2
+      - 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring22_prime
+      tex: ohirume_ring
+      seq: *id134
+      size: *id135
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: *id136
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring2
+      tex: ohirume_ring
+      seq: &id137
+      - 0
+      - 0
+      size: &id138
+      - 10.638
+      - 10.638
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring2_prime
+      tex: ohirume_ring
+      seq: *id137
+      size: *id138
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: core2
+      tex: ohirume_core
+      size: &id139
+      - 10.0
+      - 10.0
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: core2_prime
+      tex: ohirume_core
+      size: *id139
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: void2
+      tex: ohirume_void
+      size: &id140
+      - 10.0
+      - 10.0
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void2_prime
+      tex: ohirume_void
+      size: *id140
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 180
+      offset: *id132
+      motion: *id133
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: dist3
+      tex: ohirume_distort
+      size: &id141
+      - 12.65
+      - 12.65
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: &id142
+      - 0
+      - 0
+      - 44
+      motion: &id143
+      - type: orbit
+        speed: 0.5
+        direction: 1
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: dist3_prime
+      tex: ohirume_distort
+      size: *id141
+      alpha: 150
+      color: *id003
+      anim_rate: 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring23
+      tex: ohirume_ring
+      seq: &id144
+      - 1
+      - 1
+      size: &id145
+      - 8.074
+      - 8.074
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: &id146
+      - 0.2
+      - 0.5
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring23_prime
+      tex: ohirume_ring
+      seq: *id144
+      size: *id145
+      alpha: 170
+      color: *id003
+      turn: -90
+      pulse_alpha: *id146
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: ring3
+      tex: ohirume_ring
+      seq: &id147
+      - 0
+      - 0
+      size: &id148
+      - 7.314
+      - 7.314
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring3_prime
+      tex: ohirume_ring
+      seq: *id147
+      size: *id148
+      alpha: 245
+      color: *id003
+      turn: 90
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: core3
+      tex: ohirume_core
+      size: &id149
+      - 6.875
+      - 6.875
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: core3_prime
+      tex: ohirume_core
+      size: *id149
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: void3
+      tex: ohirume_void
+      size: &id150
+      - 6.875
+      - 6.875
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      rate: 0.25
+      life:
+      - 8.0
+      - 8.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: void3_prime
+      tex: ohirume_void
+      size: *id150
+      alpha: 255
+      color: *id003
+      radius: 34
+      ring_even: true
+      ring_count: 1
+      ring_yaw: 270
+      offset: *id142
+      motion: *id143
+      attach: true
+      shape: ring
+      count: 1
+      life:
+      - 8.0
+      - 8.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.037
+    - id: trail
+      tex: ohirume_gravity
+      render: trail
+      trail: &id151
+      - 0.2
+      - 0.28
+      shape: ring
+      radius: 34
+      thickness: 3
+      height: &id152
+      - 40
+      - 58
+      rate: 20
+      life:
+      - 0.35
+      - 0.45
+      size: &id153
+      - 0.6
+      - 0.9
+      alpha: &id154
+      - 180
+      - 230
+      color: *id003
+      motion: &id155
+      - type: orbit
+        speed: 0.5
+        direction: 1
+      fade_in: 0.2
+      fade_out: 0.5
+      attach: true
+    - id: trail_prime
+      tex: ohirume_gravity
+      render: trail
+      trail: *id151
+      shape: ring
+      radius: 34
+      thickness: 3
+      height: *id152
+      life:
+      - 0.45
+      - 0.45
+      size: *id153
+      alpha: *id154
+      color: *id003
+      motion: *id155
+      fade_out: 0.5
+      attach: true
+      count: 5
+      extra:
+      - - I_remap_count
+        - 0
+        - 5
+        - 0.023
+        - 0.45
+        - 1
+  ohirume_float:
+    about: lévitation discrète sous les pieds, en boucle (CP0 = pieds)
+    layers:
+    - id: ring
+      tex: ohirume_ring
+      seq: &id156
+      - 0
+      - 0
+      shape: point
+      orient: ground
+      offset: &id157
+      - 0
+      - 0
+      - 1
+      size: &id158
+      - 14
+      - 14
+      alpha: 200
+      color: *id003
+      turn: 20
+      attach: true
+      rate: 0.056
+      life:
+      - 36.0
+      - 36.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring_prime
+      tex: ohirume_ring
+      seq: *id156
+      shape: point
+      orient: ground
+      offset: *id157
+      size: *id158
+      alpha: 200
+      color: *id003
+      turn: 20
+      attach: true
+      count: 1
+      life:
+      - 36.0
+      - 36.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.007
+    - id: ring_in
+      tex: ohirume_ring
+      seq: &id159
+      - 1
+      - 1
+      shape: point
+      orient: ground
+      offset: &id160
+      - 0
+      - 0
+      - 1.5
+      size: &id161
+      - 9
+      - 9
+      alpha: 170
+      color: *id003
+      turn: -30
+      attach: true
+      rate: 0.083
+      life:
+      - 24.0
+      - 24.0
+      fade_in: 0.25
+      fade_out: 0.25
+    - id: ring_in_prime
+      tex: ohirume_ring
+      seq: *id159
+      shape: point
+      orient: ground
+      offset: *id160
+      size: *id161
+      alpha: 170
+      color: *id003
+      turn: -30
+      attach: true
+      count: 1
+      life:
+      - 24.0
+      - 24.0
+      fade_in_s: 0.06
+      fade_out: 0.25
+      grow:
+      - 0.08
+      - 1.0
+      - 0.3
+      - 0.01
+    - id: rise
+      tex: sarada_fragment
+      seq: &id162
+      - 0
+      - 3
+      shape: disc
+      spread: &id163
+      - 3
+      - 12
+      height: &id164
+      - 0
+      - 4
+      rate: 6
+      life:
+      - 0.6
+      - 1.0
+      size: &id165
+      - 0.5
+      - 1.0
+      up: &id166
+      - 14
+      - 24
+      alpha: 230
+      color: *id003
+      rot: true
+      spin: &id167
+      - -120
+      - 120
+      fade_in: 0.2
+      fade_out: 0.5
+      attach: true
+    - id: rise_prime
+      tex: sarada_fragment
+      seq: *id162
+      shape: disc
+      spread: *id163
+      height: *id164
+      life:
+      - 1.0
+      - 1.0
+      size: *id165
+      up: *id166
+      alpha: 230
+      color: *id003
+      rot: true
+      spin: *id167
+      fade_out: 0.5
+      attach: true
+      count: 5
+      extra:
+      - - I_remap_count
+        - 0
+        - 5
+        - 0.05
+        - 1.0
+        - 1
+    - id: filaments
+      tex: sarada_filament
+      shape: ring
+      radius: 8
+      thickness: 4
+      height: &id168
+      - 0
+      - 6
+      rate: 3
+      orient: vertical
+      life:
+      - 0.5
+      - 0.8
+      size: &id169
+      - 3
+      - 5
+      up: &id170
+      - 18
+      - 28
+      alpha: &id171
+      - 160
+      - 220
+      color: *id003
+      anim_rate: 1.5
+      fade_in: 0.3
+      fade_out: 0.5
+      attach: true
+    - id: filaments_prime
+      tex: sarada_filament
+      shape: ring
+      radius: 8
+      thickness: 4
+      height: *id168
+      orient: vertical
+      life:
+      - 0.8
+      - 0.8
+      size: *id169
+      up: *id170
+      alpha: *id171
+      color: *id003
+      anim_rate: 1.5
+      fade_out: 0.5
+      attach: true
+      count: 2
+      extra:
+      - - I_remap_count
+        - 0
+        - 2
+        - 0.04
+        - 0.8
+        - 1

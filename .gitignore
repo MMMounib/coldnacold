@@ -1,20 +1,5 @@
-# Generated previews
-particles/previews/*
-!particles/previews/.gitkeep
-!particles/previews/README.md
-
-# Temporary generated files
-particles/generated/*
-!particles/generated/.gitkeep
-!particles/generated/README.md
-
-# OS
-Thumbs.db
-.DS_Store
-
-# Editors
-.vscode/
-.idea/
-
-# Claude local/runtime data that should not be committed unless intentionally used
-.claude/settings.local.json
+out/
+__pycache__/
+*.pyc
+art/
+.pytest_cache/

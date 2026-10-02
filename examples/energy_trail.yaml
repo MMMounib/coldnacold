@@ -1,0 +1,6 @@
+# Traînée attachée à l'entité (CP0 suit l'entité).
+id: energy_trail
+title: Traînée d'énergie
+style: {type: lightning, color: [140, 170, 255], intensity: 0.6, look: [energetic]}
+shape: {type: trail, radius: 10}
+performance: {max_particles: 180}

@@ -1,99 +1,64 @@
-# GMod Particle Claude Kit
+# pcfforge — atelier de particules Garry's Mod
 
-Kit de travail pour utiliser Claude Code comme assistant spécialisé dans la création de particules **Garry's Mod / Source Engine**.
+pcfforge transforme une description courte (une spec YAML ou un script Python) en particules prêtes pour Garry's Mod :
+fichier `.pcf`, textures VTF/VMT et chargeur Lua. Les effets sont pensés pour un serveur Naruto RP : auras d'armes,
+techniques en plusieurs temps (apparition, maintien, fin), packs autonomes à distribuer.
 
-## Objectif
+## Effets du dépôt
 
-Tu décris l'effet que tu veux en texte.
+| Effet | Fichiers | Description | État en jeu |
+|---|---|---|---|
+| **Sarada — Mangekyō Sharingan / Ōhirume** | `examples/gen_sarada_ohirume.py` | pack autonome de 16 particules (aura, activation, œil, verrouillage, traînée d'attraction, sphères de gravité, projectile, attraction, impact, implosion, orbite de 4 sphères, lévitation) + motif du Mangekyō | non vu en jeu |
+| **Bouclier Black Clover** | `examples/gen_bc_shield.py` | bulle ovale bleu-violet : un cercle s'ouvre au sol, le bouclier en sort, boucle animée, éclatement | v4 vue en jeu, v5 à valider |
+| **Zone de protection Black Clover** | `examples/gen_bc_zone.py` | cercle magique géométrique au sol (rayon 150 u), anneaux qui tournent | non vu en jeu |
+| **Aura Abyss** | `examples/abyss_aura.yaml` | nébuleuse violette sur la lame de `sword_persee` | **validée** (référence de qualité) |
+| **Aura Darui** | `examples/darui_aura.yaml` | foudre noire qui fait le tour de la lame de `sword_darui` | à valider |
+| **Aura Berserk** | `examples/berserk_aura.yaml` | miasme noir et pointes d'encre sur `sword_persee` | à valider |
+| **Aura Hiramekarei** | `examples/hiramekarei_aura.yaml` | chakra le long de la silhouette de l'épée | à valider |
+| Exemples simples | `examples/chakra_*.yaml`, `examples/energy_*.yaml` | aura, explosion, impact, projectile, traînée, vortex | exemples de base |
 
-Claude doit :
-1. comprendre la demande ;
-2. détecter les informations manquantes ;
-3. poser les questions nécessaires ;
-4. concevoir la particule ;
-5. produire les fichiers nécessaires ;
-6. vérifier la structure et l'optimisation ;
-7. produire/chercher un aperçu lorsque l'environnement le permet ;
-8. te laisser valider le rendu.
-
-## Règle fondamentale
-
-Claude ne doit pas inventer silencieusement une couleur, une taille, une forme, un mouvement ou une autre caractéristique importante.
-
-Si une information critique est ambiguë, il doit poser la question avant de générer.
+Les auras d'armes suivent le modèle réel de l'arme (lecture du `.mdl`) ; les autres effets sont autonomes.
 
 ## Installation
 
-Copier le contenu du dépôt dans le dossier racine du projet Claude Code.
+Python **3.11** (la bibliothèque `srctools` n'a pas de version compilée au-delà).
 
-La structure attendue est :
-
-```text
-CLAUDE.md
-.claude/
-└── skills/
-    └── gmod-particles/
-        ├── SKILL.md
-        ├── references/
-        ├── examples/
-        └── assets/
+```
+python -m venv venv
+venv\Scripts\activate                 (Linux / macOS : . venv/bin/activate)
+pip install -r requirements.txt pytest
+python -m pytest -q tests
+python -m pcfforge doctor
 ```
 
 ## Utilisation
 
-Exemple de demande :
+| Commande | Résultat |
+|---|---|
+| `python -m pcfforge generate <spec>` | addon complet dans `out/<id>_fx/` |
+| `python -m pcfforge pack <spec>` | zip à donner dans `out/share/<id>.zip`, à extraire dans `garrysmod/addons/` |
+| `python -m pcfforge preview <spec> --chain 'start:0,loop:1:4!,end:4'` | GIF d'aperçu (simulation hors moteur) |
+| `python -m pcfforge lint <spec>` / `validate <pcf>` | vérification d'une spec / d'un PCF |
+| `python -m pcfforge analyze <pcf>` | lecture d'un PCF de référence (débits, tailles, couleurs) |
+| `python -m pcfforge model inspect <mdl>` | os, attachements et hitboxes d'un modèle |
 
-> Je veux une aura de feu autour du joueur, assez compacte, avec un noyau orange et des petites flammes rouges qui tournent lentement.
+Les effets écrits en script se génèrent d'abord : `python examples/gen_<effet>.py`, puis `generate` ou `pack`.
+Le pack Sarada a son propre assembleur : `python examples/package_sarada_ohirume.py` produit
+`out/share/pcfforge_sarada_ohirume.zip` (PCF, matériaux, textures, documentation, aperçus).
 
-Claude doit demander les précisions nécessaires avant de générer si quelque chose d'important manque.
+## Organisation
 
-## Exemples de bonnes demandes
+| Dossier | Contenu |
+|---|---|
+| `pcfforge/` | l'outil : couches, textures procédurales, écriture du PCF (format de l'éditeur Valve), lint, aperçu |
+| `pcfforge/model/` | lecture des modèles MDL/VVD (os, régions, silhouette d'une lame) |
+| `examples/` | les effets (specs YAML et scripts de génération) |
+| `gmod/` | runtime Lua client, captures en jeu, lanceur Windows |
+| `references/` | PCF de référence et ce qu'on en a appris |
+| `docs/` | `GUIDE.md` (mode d'emploi), `LIMITES.md` (journal : ce qui est vu en jeu ou non), `REPRISE.md` (état) |
+| `tests/` | tests automatiques, modèles d'armes réels dans `fixtures/` |
 
-```text
-Je veux une explosion magique violette.
-```
+## Statut
 
-Cette demande est volontairement incomplète : Claude doit demander les informations nécessaires.
-
-```text
-Je veux une aura bleue autour du joueur.
-Elle doit rester assez proche du corps.
-Elle dure tant que le spell est actif.
-Je veux un core lumineux, un glow léger et quelques petites particules qui montent.
-Pas de trail.
-Style propre et premium.
-Priorité aux performances.
-```
-
-Cette demande contient déjà beaucoup plus d'informations et peut permettre à Claude de commencer après avoir vérifié les éventuelles ambiguïtés.
-
-## GitHub
-
-Le dépôt est conçu pour être versionné.
-
-Structure recommandée :
-
-```text
-gmod-particle-claude-kit/
-├── CLAUDE.md
-├── README.md
-├── .claude/
-│   └── skills/
-│       └── gmod-particles/
-│           ├── SKILL.md
-│           ├── references/
-│           ├── examples/
-│           └── assets/
-└── particles/
-    ├── generated/
-    ├── approved/
-    └── previews/
-```
-
-Ajoute progressivement tes vrais PCF validés dans `examples/` et tes connaissances techniques vérifiées dans `references/`.
-
-## Important
-
-Ce kit ne contient volontairement pas de logique Lua de spell.
-
-Le projet est centré sur la conception visuelle des particules.
+Les PCF sont générés et relus hors moteur, tous les tests passent. Le rendu réel se juge uniquement dans
+Garry's Mod : l'état de chaque effet est suivi dans `docs/LIMITES.md`.
