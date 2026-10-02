@@ -1,0 +1,24 @@
+# Spec pcfforge V3 — voir docs/GUIDE.md
+id: __NAME__
+title: __NAME__
+mode: auto                          # auto | standalone | model_driven
+style:
+  type: chakra                      # chakra, fire, lightning, wind, water, smoke, magic, plasma, dust, ash
+  color: [110, 205, 255]
+  secondary_color: [225, 248, 255]
+  intensity: 0.7                    # 0..1
+  look: [elegant]                   # soft, sharp, anime, cartoon, energetic, mystical, aggressive, elegant, dense, minimal
+shape:
+  type: aura                        # aura, burst, projectile, impact, vortex, trail, beam, ...
+  radius: 34
+behavior:
+  motion: rise                      # ou liste : [orbit, {type: rise, speed: 1.5}]
+  turbulence: 0.3
+  pulse: 1.0
+# timeline: [{phase: charge, duration: .3}, {phase: release, duration: .2}]
+# variation: {scale: .2, lifetime: .2, rotation: .5}
+performance: {max_particles: 250, quality: high}
+# Model-driven (optionnel) :
+# model: {path: models/arme.mdl}
+# regions: {blade: {hitbox_bone: RightHand, start: 0.2, end: 0.98}}
+# attachment: {type: region, name: blade}

@@ -1,0 +1,7 @@
+id: energy_vortex
+title: Vortex d'énergie
+style: {type: magic, color: [170, 100, 255], secondary_color: [240, 220, 255], intensity: 0.7, look: [mystical]}
+shape: {type: vortex, radius: 60, height: 140}
+behavior: {motion: vortex, turbulence: 0.2}
+variation: {scale: 0.25, lifetime: 0.2, velocity: 0.2, emission: 0.3}
+performance: {max_particles: 300}

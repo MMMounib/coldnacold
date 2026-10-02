@@ -1,0 +1,7 @@
+# Projectile : CP0 = position du projectile (déplacée par le code du sort).
+id: chakra_projectile
+title: Projectile de chakra
+style: {type: chakra, color: [110, 205, 255], intensity: 0.75, look: [sharp]}
+shape: {type: projectile, radius: 14}
+behavior: {motion: spiral}
+performance: {max_particles: 200}

@@ -1,0 +1,8 @@
+# Aura de chakra permanente autour d'un joueur (standalone, sans modèle).
+id: chakra_aura
+title: Aura de chakra
+mode: auto
+style: {type: chakra, color: [90, 190, 255], secondary_color: [220, 245, 255], intensity: 0.7, look: [elegant]}
+shape: {type: aura, radius: 34, height: 72}
+behavior: {motion: rise, turbulence: 0.3, pulse: 1.0}
+performance: {max_particles: 220, quality: high}

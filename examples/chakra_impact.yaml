@@ -1,0 +1,5 @@
+id: chakra_impact
+title: Impact de chakra
+style: {type: chakra, color: [110, 205, 255], intensity: 0.8, look: [anime, aggressive]}
+shape: {type: impact, radius: 60}
+performance: {max_particles: 300}
