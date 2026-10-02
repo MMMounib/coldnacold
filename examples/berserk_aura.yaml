@@ -1,0 +1,13 @@
+# Aura démoniaque (direction artistique Berserk) collée à la lame de sword_persee (model-driven, modèle réel).
+# Le modèle n'a qu'un os "root" : la lame est la partie au-delà de la garde (start 0.32, à ajuster en jeu).
+id: berserk_aura
+title: Aura démoniaque (Berserk)
+mode: model_driven
+model:
+  path: ../tests/fixtures/berserk/models/face/sword_persee.mdl
+regions:
+  blade: {bone: root, start: 0.32, end: 1.0}
+attachment: {type: region, name: blade}
+style: {type: demonic, color: [165, 12, 22], secondary_color: [105, 25, 150], intensity: 0.7}
+shape: {type: aura, scale: 1.15, margin: 1.5, rise: 55}   # colle à la lame ; rise = vitesse du miasme qui monte
+performance: {max_particles: 240}

@@ -1,0 +1,14 @@
+# Aura le long de la lame d'Hiramekarei (model-driven, modèle réel dans tests/fixtures).
+# Le modèle n'a pas d'os "blade" : la lame est la géométrie pondérée sur RightHand.
+# start 0.15 exclut la poignée, garde les nageoires (à ajuster en jeu).
+id: hiramekarei_aura
+title: Aura Hiramekarei
+mode: model_driven
+model:
+  path: ../tests/fixtures/hiramekarei/models/models/naruto/unique_props/unique_props/fsc/hiramekarai.mdl
+regions:
+  blade: {hitbox_bone: RightHand, start: 0.15, end: 0.99}
+attachment: {type: region, name: blade}
+style: {type: chakra, color: [40, 115, 225], secondary_color: [140, 200, 255], intensity: 0.7, look: [elegant]}
+shape: {type: aura, scale: 1.25, margin: 2, rise: 16}   # proche de la silhouette réelle de la lame
+performance: {max_particles: 150}

@@ -1,0 +1,12 @@
+# Aura démoniaque cosmique (nébuleuse violette) sur la lame de sword_persee, d'après la référence du 30/09.
+id: abyss_aura
+title: Aura des abysses
+mode: model_driven
+model:
+  path: ../tests/fixtures/berserk/models/face/sword_persee.mdl
+regions:
+  blade: {bone: root, start: 0.32, end: 1.0}
+attachment: {type: region, name: blade}
+style: {type: abyss, color: [120, 45, 235], secondary_color: [235, 120, 255], intensity: 0.75}
+shape: {type: aura, scale: 1.15, margin: 1.5, rise: 20}
+performance: {max_particles: 420}   # calibré sur fsc_aura2 (plusieurs centaines)

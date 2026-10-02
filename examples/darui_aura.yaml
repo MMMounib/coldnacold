@@ -1,0 +1,13 @@
+# Foudre noire (Kuro Kaminari) de Darui sur models/face/sword_darui.mdl (model-driven, modèle réel).
+# Un seul os "root" ; la lame est le grand trapèze après la garde (start 0.25, à ajuster en jeu).
+id: darui_aura
+title: Foudre noire de Darui
+mode: model_driven
+model:
+  path: ../tests/fixtures/darui/models/face/sword_darui.mdl
+regions:
+  blade: {bone: root, start: 0.25, end: 1.0}
+attachment: {type: region, name: blade}
+style: {type: black_lightning, color: [120, 170, 255], secondary_color: [220, 235, 255], intensity: 0.7}
+shape: {type: aura, scale: 1.1, margin: 1.5}
+performance: {max_particles: 360}   # base validée (abyss), un peu plus légère
